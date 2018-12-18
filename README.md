@@ -36,7 +36,7 @@ gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 # Ploting gaps
 plot(gaps_duc, col="red", add=TRUE, main="Forest Canopy Gap", legend=FALSE)
 ```
-![Net 1 plot](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_2.png)
+<img align="right" src="(https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_2.png)
 
 ### Forest canopy Gaps Stats
 This function computes a serie of forest canopy gap statistics
@@ -106,8 +106,7 @@ gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
     
  
 ### Forest Canopy Gap-size Frequency Distributions
-![Net 1 plot](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_3.png)
-  
+
 ```r
 #Loading raster library
 library(raster)
@@ -131,6 +130,7 @@ axes=FALSE,ylab="Gap Frequency",xlab=as.expression(bquote("Gap Size" ~ (m^2) )))
 axis(1);axis(2)
 grid(4,4)
 ```
+![Net 1 plot](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_3.png)
 
 ### Forest Gaps Changes Detection
 ```r
