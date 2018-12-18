@@ -4,7 +4,7 @@
 
 ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis 
 
-The GapForestR package provides functions to i) automate canopy gaps detection, ii) compute  a serie of forest canopy gap statistics, including gap-size frequency distributions and iii) map gap dynamics (when multi-temporal ALS data are available), and convert the data among spatial formats.
+The GapForestR package provides functions to i) automate canopy gaps detection, ii) compute a series of forest canopy gap statistics, including gap-size frequency distributions, iii) map gap dynamics (when multi-temporal ALS data are available), and iv) convert the data among spatial formats.
 
 ## Installation
 ```r
@@ -26,21 +26,21 @@ data(ALS_CHM_DUC)
 
 # Plotting chm
 plot(ALS_CHM_DUC, col=viridis(10))
-
-# set height tresholds (e.g. 10 meters)
+ 
+# Setting height thresholds (e.g. 10 meters)
 threshold<-10
 size<-c(1,1000) # m2
 
 # Detecting forest gaps
 gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 
-# Ploting gaps
+# Plotting gaps
 plot(gaps_duc, col="red", add=TRUE, main="Forest Canopy Gap", legend=FALSE)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_2.png)
 
 ### Forest Canopy Gaps Stats
-This function computes a serie of forest canopy gap statistics
+This function computes a series of forest canopy gap statistics
 
 List of forest gaps statistics:
   #gap_id: gap id;
@@ -58,7 +58,7 @@ library(raster)
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
 
-# set height tresholds (e.g. 10 meters)
+# Setting height thresholds (e.g. 10 meters)
 threshold<-10
 size<-c(5,1000) # m2
 
