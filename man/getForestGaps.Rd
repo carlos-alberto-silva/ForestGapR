@@ -4,7 +4,7 @@
 \alias{getForestGaps}
 \title{Forest Canopy Gap Detection}
 \usage{
-getForestGaps(chm_layer, threshold, size)
+getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 }
 \arguments{
 \item{chm_layer}{ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.}
