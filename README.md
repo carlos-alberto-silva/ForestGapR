@@ -208,8 +208,8 @@ head(gaps_spdf@data)
 ### References
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy     gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
 
-Sustainable Landscape Brazil. 2018. <https://www.paisagenslidar.cnptia.embrapa.br/webgis/>. (accessed in August 2018).  
 White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89:   905–912.
-  
+
+Sustainable Landscape Brazil. 2018. <https://www.paisagenslidar.cnptia.embrapa.br/webgis/>. (accessed in August 2018).  
 ### Acknowledgements
 ALS data from Adolfo Ducke (ALS_CHM_DUC) Forest Reserve and Cauaxi Forest (ALS_CHM_CAU_2012 and ALS_CHM_CAU_2014) used as exemple datasets were acquired by the Sustainable Landscapes Brazil project supported by the Brazilian Agricultural Research Corporation (EMBRAPA), the US Forest Service, USAID, and the US Department of State. 
