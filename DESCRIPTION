@@ -1,0 +1,15 @@
+Package: ForestGapR
+Type: Package
+Title: Tropical Forest Gaps Analysis
+Version: 0.0.1
+Author: Carlos Alberto Silva
+Maintainer: Carlos Alberto Silva <carlos_engflorestal@outlook.com>
+Depends:
+    R (>= 3.4.0)
+Imports:
+    raster, igraph, VGAM, sp, graphics, stats, viridis
+Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0

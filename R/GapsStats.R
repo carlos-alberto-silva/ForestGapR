@@ -1,0 +1,54 @@
+#'Forest canopy Gaps Stats
+#'
+#'@description This function computes a serie of forest canopy gap statistics
+#'
+#'
+#'@usage GapStats(gap_layer, chm_layer)
+#'
+#'@param gap_layer ALS-derived gap as RasterLayer (\code{\link[raster:raster]{raster}}) object (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function). An object of the classs RasterLayer.
+#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) used in \code{\link[GapForestR:getForestGaps]{getForestGaps}} function. An object of the classs RasterLayer.
+#'@return A data.frame containing forest canopy gap statistics
+#'@author Carlos Alberto Silva.
+#'@details
+#'# List of forest gaps statistics:
+#'\itemize{
+#'\item gap_id: gap id
+#'\item gap_area - area of gap (m2)
+#'\item chm_max - Maximum canopy height (m) within gap boundary
+#'\item chm_min - Minimum canopy height (m) within gap boundary
+#'\item chm_mean - Mean canopy height (m) within gap boundary
+#'\item chm_sd - Standard Deviation of canopy height (m) within gap boundary
+#'\item chm_range - Range of canopy height (m) within gap boundary
+#'}
+#'
+#'@examples
+#'#Loading raster library
+#'library(raster)
+#'
+#'# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
+#'data(ALS_CHM_DUC)
+#'
+#'# set height tresholds (e.g. 10 meters)
+#'threshold<-10
+#'size<-c(5,1000) # m2
+#'
+#'# Detecting forest gaps
+#'gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
+#'
+#'# Computing basic statistis of forest gap
+#'gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
+#'
+#'@export
+GapStats<-function(gap_layer, chm_layer){
+  gap_list<-data.frame(raster::freq(gap_layer))
+  gap_list$count<-gap_list$count*raster::res(chm_layer)[1]^2
+  gap_list<-gap_list[!is.na(gap_list[,1]),]
+  gap_list$chm_max<-tapply(chm_layer[],gap_layer[],max)
+  gap_list$chm_min<-tapply(chm_layer[],gap_layer[],min)
+  gap_list$chm_mean<-tapply(chm_layer[],gap_layer[],mean)
+  gap_list$chm_sd<-tapply(chm_layer[],gap_layer[],stats::sd)
+  gap_list$chm_range<-gap_list$chm_max-gap_list$chm_min
+  colnames(gap_list)<-c("gap_id","gap_area","chm_max","chm_min","chm_mean","chm_sd","chm_range")
+  return(gap_list)
+}
+
