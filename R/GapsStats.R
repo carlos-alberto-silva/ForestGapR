@@ -1,6 +1,6 @@
 #'Forest canopy Gaps Stats
 #'
-#'@description This function computes a serie of forest canopy gap statistics
+#'@description This function computes a series of forest canopy gap statistics
 #'
 #'
 #'@usage GapStats(gap_layer, chm_layer)

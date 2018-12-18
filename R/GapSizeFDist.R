@@ -1,6 +1,6 @@
 #'Forest Canopy Gap-size Frequency Distributions
 #'
-#'@description This function quantify the size frequency distribution of forest canopy gaps using  Zeta distribution,
+#'@description This function quantifies the size frequency distribution of forest canopy gaps using Zeta distribution,
 #'which is a discrete power-law probability density.
 #'
 #'@usage GapSizeFDist(gaps_stats,...)
@@ -11,7 +11,7 @@
 #'minimum value of the likelihood. The parameter \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is the scaling exponent for the
 #'power-law Zeta distribution fitted to the data using maximum likelihood. See details section.
 #'
-#'@author Carlos Alberto Silva.
+#'@author Carlos Alberto Silva. This function was implemented based on the R script provided by Asner et al. (2013)
 #'
 #'@section Details: For the Zeta distribution with parameter \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}, the probability that gap size takes
 #'the integer value k is:

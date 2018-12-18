@@ -4,8 +4,8 @@
 \title{ALS-derived CHM - Adolpho Ducke Forest Reserve 2012}
 \description{
 The Airborne Laser Scanning (ALS)-derived Canopy Height Model - (CHM) provided as an example dataset collected in 2012 
-at the from Adolpho Ducke Forest Reserve in Municipality of Manaus of State of Amazonas,
-Brazil, in the eastern Amazon. 
+at the Adolpho Ducke Forest Reserve in Municipality of Manaus of State of Amazonas,
+Brazil, in central Amazon. 
 }
 \usage{data(ALS_CHM_DUC)}
 \format{

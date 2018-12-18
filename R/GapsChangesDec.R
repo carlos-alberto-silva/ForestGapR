@@ -1,6 +1,6 @@
 #'Forest Gaps Changes Detection
 #'
-#'@description This function detects forest canopy gaps changes accross two forest gaps RasterLayer (\code{\link[raster]{raster}}) objects
+#'@description This function detects forest canopy gap changes across two forest gap RasterLayer (\code{\link[raster]{raster}}) objects
 #'
 #'@usage GapChangeDec(gap_layer1,gap_layer2)
 #'
