@@ -213,5 +213,3 @@ White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw fre
 Sustainable Landscape Brazil. 2018. <https://www.paisagenslidar.cnptia.embrapa.br/webgis/>. (accessed in August 2018).  
 ### Acknowledgements
 ALS data from Adolfo Ducke (ALS_CHM_DUC) Forest Reserve and Cauaxi Forest (ALS_CHM_CAU_2012 and ALS_CHM_CAU_2014) used as exemple datasets were acquired by the Sustainable Landscapes Brazil project supported by the Brazilian Agricultural Research Corporation (EMBRAPA), the US Forest Service, USAID, and the US Department of State. 
-
-<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=u-AjxkTyPUcTugfw8OByS1h0kmGyQNkUASmi9yv1-5A&cl=ffffff&w=a"></script>
