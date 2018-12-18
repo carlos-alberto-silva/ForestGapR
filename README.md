@@ -14,7 +14,7 @@ The GapForestR package provides functions to i) automate canopy gaps detection, 
 
 ## Getting Started
 
-### Forest Canopy Gap detection
+### Forest Canopy Gap Detection
 ```r
 #Loading raster and viridis library
 library(raster)
