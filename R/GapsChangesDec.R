@@ -38,7 +38,7 @@
 #'plot(ALS_CHM_CAU_2014,  main="Forest Canopy Gap - 2014", col=viridis(10))
 #'plot(gaps_cau2014, add=TRUE,col="red", legend=FALSE)
 #'
-#'plot(ALS_CHM_CAU_2014,main="Forest Gaps Changes Detection",col=viridis(10))
+#'plot(ALS_CHM_CAU_2014,main="Forest Gap Changes Detected",col=viridis(10))
 #'plot(Gap_changes, add=TRUE, col="orange", legend=FALSE)
 #'}
 #'@export

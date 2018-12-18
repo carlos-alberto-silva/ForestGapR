@@ -3,7 +3,7 @@
 #'@description This function converts forest canopy gaps as RasterLayer (\code{\link[raster]{raster}}) to
 #'\code{\link[sp]{SpatialPolygonsDataFrame}} objects
 #'
-#'@usage GapSPDF(gap_layer)
+#'@usage GapSPDF(gap_layer) 
 #'
 #'@param gap_layer ALS-derived gap layer (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function).
 #'An object of the classs RasterLayer.
