@@ -132,7 +132,7 @@ grid(4,4)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_3.png)
 
-### Forest Gaps Changes Detection
+### Forest Gap Change Detection
 ```r
 #Loading raster and viridis libraries
 library(raster)
