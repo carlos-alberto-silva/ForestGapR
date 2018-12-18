@@ -43,13 +43,13 @@ plot(gaps_duc, col="red", add=TRUE, main="Forest Canopy Gap", legend=FALSE)
 This function computes a serie of forest canopy gap statistics
 
 List of forest gaps statistics:
-*gap_id: gap id
-*gap_area - area of gap (m2)
-*chm_max - Maximum canopy height (m) within gap boundary
-*chm_min - Minimum canopy height (m) within gap boundary
-*chm_mean - Mean canopy height (m) within gap boundary
-*chm_sd - Standard Deviation of canopy height (m) within gap boundary
-*chm_range - Range of canopy he ight (m) within gap boundary
+  #gap_id: gap id
+  #gap_area - area of gap (m2)
+  #chm_max - Maximum canopy height (m) within gap boundary
+  #chm_min - Minimum canopy height (m) within gap boundary
+  #chm_mean - Mean canopy height (m) within gap boundary
+  #chm_sd - Standard Deviation of canopy height (m) within gap boundary
+  #chm_range - Range of canopy he ight (m) within gap boundary
 
 ```r
 #Loading raster library
