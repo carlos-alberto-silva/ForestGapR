@@ -106,8 +106,8 @@ gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
     
  
 ### Forest Canopy Gap-size Frequency Distributions
-<img align="right" src="https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_3.png">
-
+![Net 1 plot](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_3.png)
+  
 ```r
 #Loading raster library
 library(raster)
