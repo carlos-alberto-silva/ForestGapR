@@ -36,7 +36,7 @@ gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 # Ploting gaps
 plot(gaps_duc, col="red", add=TRUE, main="Forest Canopy Gap", legend=FALSE)
 ```
-![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_4.png)
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_2.png){:height="36px" width="36px"}
 
 ### Forest canopy Gaps Stats
 This function computes a serie of forest canopy gap statistics
@@ -164,7 +164,7 @@ plot(gaps_cau2014, add=TRUE,col="blue", legend=FALSE)
 plot(ALS_CHM_CAU_2014,main="Forest Gaps Changes Detection",col=viridis(10))
 plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
 ```
-![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_2.png | width=100)
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_4.png)
 
 ### references
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy     gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
