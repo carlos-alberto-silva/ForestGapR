@@ -36,7 +36,7 @@ gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 # Ploting gaps
 plot(gaps_duc, col="red", add=TRUE, main="Forest Canopy Gap", legend=FALSE)
 ```
-<img align="right" src="(https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_2.png)
+<img align="right" src="(https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_2.png)>
 
 ### Forest canopy Gaps Stats
 This function computes a serie of forest canopy gap statistics
