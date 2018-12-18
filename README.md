@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/carlos-alberto-silva/ForestGapR/readme/fig_1.png)<br/>
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_1.tif)<br/>
 
 ![Github](https://img.shields.io/badge/Github-0.0.1-green.svg) ![licence](https://img.shields.io/badge/Licence-GPL--3-blue.svg) 
 
