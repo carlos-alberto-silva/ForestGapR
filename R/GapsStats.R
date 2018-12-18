@@ -30,7 +30,7 @@
 #'
 #'# set height tresholds (e.g. 10 meters)
 #'threshold<-10
-#'size<-c(5,1000) # m2
+#'size<-c(5,10^4) # m2
 #'
 #'# Detecting forest gaps
 #'gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)

@@ -17,7 +17,7 @@ minimum value of the likelihood. The parameter \ifelse{latex}{\out{$\lambda$}}{\
 power-law Zeta distribution fitted to the data using maximum likelihood. See details section.
 }
 \description{
-This function quantify the size frequency distribution of forest canopy gaps using  Zeta distribution,
+This function quantifies the size frequency distribution of forest canopy gaps using Zeta distribution,
 which is a discrete power-law probability density.
 }
 \section{Details}{
@@ -38,7 +38,7 @@ data(ALS_CHM_DUC)
 
 # set height tresholds (e.g. 10 meters)
 threshold<-10
-size<-c(1,1000) # m2
+size<-c(1,10^4) # m2
 
 # Detecting forest gaps
 gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
@@ -59,5 +59,5 @@ Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Mar
 White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89: 905–912.
 }
 \author{
-Carlos Alberto Silva.
+Carlos Alberto Silva. This function was implemented based on the R script provided by Asner et al. (2013)
 }

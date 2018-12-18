@@ -15,7 +15,7 @@ GapStats(gap_layer, chm_layer)
 A data.frame containing forest canopy gap statistics
 }
 \description{
-This function computes a serie of forest canopy gap statistics
+This function computes a series of forest canopy gap statistics
 }
 \details{
 # List of forest gaps statistics:
@@ -38,7 +38,7 @@ data(ALS_CHM_CAU_2012)
 
 # set height tresholds (e.g. 10 meters)
 threshold<-10
-size<-c(5,1000) # m2
+size<-c(5,10^4) # m2
 
 # Detecting forest gaps
 gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)

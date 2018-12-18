@@ -72,7 +72,7 @@
 #'plot(gaps_stack$gaps_25m, col="red",add=TRUE, legend=FALSE)
 #'
 #'@export
-getForestGaps<-function(chm_layer, threshold=10, size=c(1,1000)){
+getForestGaps<-function(chm_layer, threshold=10, size=c(1,10^4)){
   chm_layer[chm_layer > threshold] <- NA
   chm_layer[chm_layer <= threshold] <- 1
   gaps <- raster::clump(chm_layer,directions=8, gap=FALSE)
