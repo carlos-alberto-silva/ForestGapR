@@ -45,7 +45,7 @@
 #'
 #'# set the height tresholds
 #'nthresholds<-c(10,15,20,25)
-#'size<-c(1,1000) # m2
+#'size<-c(1,10^4) # m2
 #'
 #'# creating an empy raster stack to store multplie gaps as RasterLayers
 #'gaps_stack<-stack()

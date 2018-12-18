@@ -2,7 +2,16 @@ Package: ForestGapR
 Type: Package
 Title: Tropical Forest Gaps Analysis
 Version: 0.0.1
-Author: Carlos Alberto Silva
+Authors@R: c(
+    person("Carlos Alberto", "Silva", email = "carlos_engflorestal@outlook.com", role = c("aut", "cre", "cph")),
+    person("Ekena Rangel", "Pinagé", email = "ekenapinage@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Midhun", "Mohan", email = "mmohan2@ncsu.edu", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Danilo Roberti Alves de", "Almeida", email = "daniloflorestas@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Eben North", "Broadbent", email = "eben@ufl.edu", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Wan Shafrina Wan Mohd", "Jaafar", email = "wanshafrina@ukm.edu.my ", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Daniel de Almeida", "Papa", email = "almeidapapa@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Adrian", "Cardil", email = "adriancardil@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"))
 Maintainer: Carlos Alberto Silva <carlos_engflorestal@outlook.com>
 Depends:
     R (>= 3.4.0)
