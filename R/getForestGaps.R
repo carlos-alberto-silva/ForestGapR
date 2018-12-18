@@ -23,7 +23,7 @@
 #'data(ALS_CHM_DUC)
 #'
 #'# Plotting chm
-#'plot(ALS_CHM_DUC, col=, main= "ALS CHM")
+#'plot(ALS_CHM_DUC, col=viridis(10), main= "ALS CHM")
 #'grid()
 #'#=======================================================================#
 #'# Example 1: Forest Gap detection using a fixed canopy height thresholds

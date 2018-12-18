@@ -2,7 +2,7 @@
 % Please edit documentation in R/GapsSPDF.R
 \name{GapSPDF}
 \alias{GapSPDF}
-\title{Spatial Polygons of Forest Canopy Gaps}
+\title{Forest Canopy Gaps as Spatial Polygons}
 \usage{
 GapSPDF(gap_layer)
 }
@@ -39,8 +39,8 @@ gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 gaps_spdf<-GapSPDF(gap_layer=gaps_duc)
 
 # Plotting ALS-derived CHM and forest gaps
-plot(ALS_CHM_DUC, col=gray(seq(0,1,len=20)))
-plot(gaps_spdf, add=TRUE, col="red",alpha = 0.5)
+plot(ALS_CHM_DUC, col=viridis(10), xlim=c(173025,173125), ylim=c(9673100,96731200))
+plot(gaps_spdf, add=TRUE, border="red", lwd=2)
 
 # Populating the attribute table of Gaps_spdf with gaps statistics
 gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
