@@ -5,7 +5,7 @@
 #'
 #'@usage GapSizeFDist(gaps_stats,...)
 #'
-#'@param gaps_stats A data.frame containing basic statistics of forest gaps. Output of (\code{\link[GapForestR:GapStats]{GapStats}}) function.
+#'@param gaps_stats A data.frame containing basic statistics of forest gaps. Output of (\code{\link[ForestGapR:GapStats]{GapStats}}) function.
 #'@param ... Supplementary parameters for (\code{\link[graphics:plot]{plot}}).
 #'@return A log-log plot of gap-size Frequency Distributions and a vector containing the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} and
 #'minimum value of the likelihood. The parameter \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is the scaling exponent for the

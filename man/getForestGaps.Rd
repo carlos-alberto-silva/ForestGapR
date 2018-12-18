@@ -25,15 +25,16 @@ This function detects forest canopy gaps on Airborne Laser Scanning(ALS)-derived
 #=======================================================================#
 # Importing ALS-derived Canopy Height Model (CHM)
 #=======================================================================#
-#Loading raster library
+#Loading raster and viridis libraries
 library(raster)
+library(viridis)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
 
 # Plotting chm
-plot(ALS_CHM_DUC, col=gray(seq(0,1,len=20)))
-
+plot(ALS_CHM_DUC, col=, main= "ALS CHM")
+grid()
 #=======================================================================#
 # Example 1: Forest Gap detection using a fixed canopy height thresholds
 #=======================================================================#
@@ -67,7 +68,6 @@ for (i in nthresholds){
 }
 
 # plot gaps
-library(viridis)
 par(mfrow=c(2,2))
 plot(ALS_CHM_DUC, col=viridis(10), main="Height treshold 10m")
 plot(gaps_stack$gaps_10m, col="red",add=TRUE, legend=FALSE)

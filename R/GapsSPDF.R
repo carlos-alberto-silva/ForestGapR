@@ -1,24 +1,25 @@
-#'Spatial Polygons of Forest Canopy Gaps
+#'Forest Canopy Gaps as Spatial Polygons
 #'
 #'@description This function converts forest canopy gaps as RasterLayer (\code{\link[raster]{raster}}) to
-#'\code{\link[sp]{SpatialPolygonsDataFrame}} objects
+#'\code{\link[sp]{SpatialPointsDataFrame-class}} objects
 #'
 #'@usage GapSPDF(gap_layer) 
 #'
-#'@param gap_layer ALS-derived gap layer (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function).
+#'@param gap_layer ALS-derived gap layer (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
 #'An object of the classs RasterLayer.
-#'@return A \code{\link[sp:SpatialPolygonsDataFrame]{SpatialPolygonsDataFrame}} object of the forest canopy gaps.
+#'@return A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps.
 #'The output file can be exported as a ESRI shapefile using
 #'\code{\link[rgdal:writeOGR]{writeOGR}} function in the \emph{rgdal} package.
 #'@author Carlos Alberto Silva.
 #'
 #'@examples
 #'\dontrun{
-#'#Loading raster library
+#'#Loading raster and viridis libraries
 #'library(raster)
+#'library(viridis)
 #'
 #'# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#'data(ALS_CHM_CAU_2012)
+#'data(ALS_CHM_DUC)
 #'
 #'# set height tresholds (e.g. 10 meters)
 #'threshold<-10
@@ -31,8 +32,8 @@
 #'gaps_spdf<-GapSPDF(gap_layer=gaps_duc)
 #'
 #'# Plotting ALS-derived CHM and forest gaps
-#'plot(ALS_CHM_DUC, col=gray(seq(0,1,len=20)))
-#'plot(gaps_spdf, add=TRUE, col="red",alpha = 0.5)
+#'plot(ALS_CHM_DUC, col=viridis(10), xlim=c(173025,173125), ylim=c(9673100,96731200))
+#'plot(gaps_spdf, add=TRUE, border="red", lwd=2)
 #'
 #'# Populating the attribute table of Gaps_spdf with gaps statistics
 #'gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)

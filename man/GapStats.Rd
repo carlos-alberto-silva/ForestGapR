@@ -7,9 +7,9 @@
 GapStats(gap_layer, chm_layer)
 }
 \arguments{
-\item{gap_layer}{ALS-derived gap as RasterLayer (\code{\link[raster:raster]{raster}}) object (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function). An object of the classs RasterLayer.}
+\item{gap_layer}{ALS-derived gap as RasterLayer (\code{\link[raster:raster]{raster}}) object (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function). An object of the classs RasterLayer.}
 
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) used in \code{\link[GapForestR:getForestGaps]{getForestGaps}} function. An object of the classs RasterLayer.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) used in \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function. An object of the classs RasterLayer.}
 }
 \value{
 A data.frame containing forest canopy gap statistics
@@ -34,7 +34,7 @@ This function computes a serie of forest canopy gap statistics
 library(raster)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+data(ALS_CHM_CAU_2012)
 
 # set height tresholds (e.g. 10 meters)
 threshold<-10

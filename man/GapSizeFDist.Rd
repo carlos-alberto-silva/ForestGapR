@@ -7,7 +7,7 @@
 GapSizeFDist(gaps_stats,...)
 }
 \arguments{
-\item{gaps_stats}{A data.frame containing basic statistics of forest gaps. Output of (\code{\link[GapForestR:GapStats]{GapStats}}) function.}
+\item{gaps_stats}{A data.frame containing basic statistics of forest gaps. Output of (\code{\link[ForestGapR:GapStats]{GapStats}}) function.}
 
 \item{...}{Supplementary parameters for (\code{\link[graphics:plot]{plot}}).}
 }

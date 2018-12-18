@@ -7,22 +7,23 @@
 GapSPDF(gap_layer)
 }
 \arguments{
-\item{gap_layer}{ALS-derived gap layer (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function).
+\item{gap_layer}{ALS-derived gap layer (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
 An object of the classs RasterLayer.}
 }
 \value{
-A \code{\link[sp:SpatialPolygonsDataFrame]{SpatialPolygonsDataFrame}} object of the forest canopy gaps.
+A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps.
 The output file can be exported as a ESRI shapefile using
 \code{\link[rgdal:writeOGR]{writeOGR}} function in the \emph{rgdal} package.
 }
 \description{
 This function converts forest canopy gaps as RasterLayer (\code{\link[raster]{raster}}) to
-\code{\link[sp]{SpatialPolygonsDataFrame}} objects
+\code{\link[sp]{SpatialPointsDataFrame-class}} objects
 }
 \examples{
 \dontrun{
-#Loading raster library
+#Loading raster and viridis libraries
 library(raster)
+library(viridis)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)

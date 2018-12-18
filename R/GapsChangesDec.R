@@ -4,8 +4,8 @@
 #'
 #'@usage GapChangeDec(gap_layer1,gap_layer2)
 #'
-#'@param gap_layer1 ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 1. (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function).
-#'@param gap_layer2 ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 2. (output of  \code{\link[GapForestR:getForestGaps]{getForestGaps}} function).
+#'@param gap_layer1 ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 1. (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
+#'@param gap_layer2 ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 2. (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
 #'@return A RasterLayer (\code{\link[raster]{raster}}) object representing forest gap change area
 #'@author Carlos Alberto Silva.
 #'
