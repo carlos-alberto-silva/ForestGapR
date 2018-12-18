@@ -26,7 +26,7 @@
 #'library(raster)
 #'
 #'# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#'data(ALS_CHM_DUC)
+#'data(ALS_CHM_CAU_2012)
 #'
 #'# set height tresholds (e.g. 10 meters)
 #'threshold<-10
@@ -45,9 +45,9 @@ GapStats<-function(gap_layer, chm_layer){
   gap_list<-gap_list[!is.na(gap_list[,1]),]
   gap_list$chm_max<-tapply(chm_layer[],gap_layer[],max)
   gap_list$chm_min<-tapply(chm_layer[],gap_layer[],min)
-  gap_list$chm_mean<-tapply(chm_layer[],gap_layer[],mean)
-  gap_list$chm_sd<-tapply(chm_layer[],gap_layer[],stats::sd)
-  gap_list$chm_range<-gap_list$chm_max-gap_list$chm_min
+  gap_list$chm_mean<-round(tapply(chm_layer[],gap_layer[],mean),2)
+  gap_list$chm_sd<-round(tapply(chm_layer[],gap_layer[],stats::sd),2)
+  gap_list$chm_range<-round(gap_list$chm_max-gap_list$chm_min,2)
   colnames(gap_list)<-c("gap_id","gap_area","chm_max","chm_min","chm_mean","chm_sd","chm_range")
   return(gap_list)
 }

@@ -18,7 +18,7 @@
 #'library(raster)
 #'
 #'# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#'data(ALS_CHM_DUC)
+#'data(ALS_CHM_CAU_2012)
 #'
 #'# set height tresholds (e.g. 10 meters)
 #'threshold<-10

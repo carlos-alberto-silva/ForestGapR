@@ -11,8 +11,9 @@
 #'
 #'@examples
 #'\dontrun{
-#'#Loading raster library
+#'#Loading raster and viridis libraries
 #'library(raster)
+#'library(viridis)
 #'
 #'# ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
 #'data(ALS_CHM_CAU_2012)
@@ -30,16 +31,15 @@
 #'Gap_changes<-GapChangeDec(gap_layer1=gaps_cau2012,gap_layer2=gaps_cau2014)
 #'
 #'# Plotting ALS-derived CHM and forest gaps
-#'library(viridis)
 #'par(mfrow=c(1,3))
 #'plot(ALS_CHM_CAU_2012, main="Forest Canopy Gap - 2012", col=viridis(10))
 #'plot(gaps_cau2012, add=TRUE, col="red", legend=FALSE)
 #'
 #'plot(ALS_CHM_CAU_2014,  main="Forest Canopy Gap - 2014", col=viridis(10))
-#'plot(gaps_cau2014, add=TRUE,col="blue", legend=FALSE)
+#'plot(gaps_cau2014, add=TRUE,col="red", legend=FALSE)
 #'
 #'plot(ALS_CHM_CAU_2014,main="Forest Gaps Changes Detection",col=viridis(10))
-#'plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
+#'plot(Gap_changes, add=TRUE, col="orange", legend=FALSE)
 #'}
 #'@export
 GapChangeDec<-function(gap_layer1,gap_layer2){
