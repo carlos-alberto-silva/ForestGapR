@@ -38,7 +38,7 @@ plot(gaps_duc, col="red", add=TRUE, main="Forest Canopy Gap", legend=FALSE)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_2.png)
 
-### Forest canopy Gaps Stats
+### Forest Canopy Gaps Stats
 This function computes a serie of forest canopy gap statistics
 
 List of forest gaps statistics:
@@ -166,11 +166,10 @@ plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_4.png)
 
-### references
+### References
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy     gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
   
 White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89:   905–912.
   
 ### Acknowledgements
-
 ALS data from Adolfo Ducke (ALS_CHM_DUC) Forest Reserve and Cauaxi Forest (ALS_CHM_CAU_2012 and ALS_CHM_CAU_2014) used as exemple datasets were acquired by the Sustainable Landscapes Brazil project supported by the Brazilian Agricultural Research Corporation (EMBRAPA), the US Forest Service, USAID, and the US Department of State. 
