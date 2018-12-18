@@ -9,7 +9,7 @@ The GapForestR package provides functions to i) automate canopy gaps detection, 
 ## Installation
 ```r
     #The development version:
-    devtools::install_github("carlos-alberto-silva/forestGap")
+    devtools::install_github("carlos-alberto-silva/ForestGapR")
 ```    
 
 ## Getting Started
