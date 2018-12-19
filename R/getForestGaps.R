@@ -29,7 +29,7 @@
 #'# Example 1: Forest Gap detection using a fixed canopy height thresholds
 #'#=======================================================================#
 #'
-#'# set height tresholds (e.g. 10 meters)
+#'# set height thresholds (e.g. 10 meters)
 #'threshold<-10
 #'size<-c(1,10^4) # m2
 #'
@@ -43,7 +43,7 @@
 #'# Example 2: Gap detection using multiple canopy height thresholds
 #'#=======================================================================#
 #'
-#'# set the height tresholds
+#'# set the height thresholds
 #'nthresholds<-c(10,15,20,25)
 #'size<-c(1,10^4) # m2
 #'

@@ -1,4 +1,4 @@
-#'Forest canopy Gaps Stats
+#'Forest Canopy Gaps Stats
 #'
 #'@description This function computes a series of forest canopy gap statistics
 #'
@@ -28,7 +28,7 @@
 #'# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #'data(ALS_CHM_CAU_2012)
 #'
-#'# set height tresholds (e.g. 10 meters)
+#'# set height thresholds (e.g. 10 meters)
 #'threshold<-10
 #'size<-c(5,10^4) # m2
 #'
