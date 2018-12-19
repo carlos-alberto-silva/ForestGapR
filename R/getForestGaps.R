@@ -59,16 +59,16 @@
 #'
 #'# plot gaps
 #'par(mfrow=c(2,2))
-#'plot(ALS_CHM_DUC, col=viridis(10), main="Height treshold 10m")
+#'plot(ALS_CHM_DUC, col=viridis(10), main="Height threshold 10m")
 #'plot(gaps_stack$gaps_10m, col="red",add=TRUE, legend=FALSE)
 #'
-#'plot(ALS_CHM_DUC, col=viridis(10), main="Height treshold 15m")
+#'plot(ALS_CHM_DUC, col=viridis(10), main="Height threshold 15m")
 #'plot(gaps_stack$gaps_15m, col="red",add=TRUE, legend=FALSE)
 #'
-#'plot(ALS_CHM_DUC, col=viridis(10), main="Height treshold 20m")
+#'plot(ALS_CHM_DUC, col=viridis(10), main="Height threshold 20m")
 #'plot(gaps_stack$gaps_20m, col="red",add=TRUE, legend=FALSE)
 #'
-#'plot(ALS_CHM_DUC, col=viridis(10), main="Height treshold 25m")
+#'plot(ALS_CHM_DUC, col=viridis(10), main="Height threshold 25m")
 #'plot(gaps_stack$gaps_25m, col="red",add=TRUE, legend=FALSE)
 #'
 #'@export
