@@ -2,7 +2,7 @@
 % Please edit documentation in R/GapsChangesDec.R
 \name{GapChangeDec}
 \alias{GapChangeDec}
-\title{Forest Gaps Changes Detection}
+\title{Forest Gaps Change Detection}
 \usage{
 GapChangeDec(gap_layer1,gap_layer2)
 }
@@ -27,7 +27,7 @@ library(viridis)
 data(ALS_CHM_CAU_2012)
 data(ALS_CHM_CAU_2014)
 
-# set height tresholds (e.g. 10 meters)
+# set height thresholds (e.g. 10 meters)
 threshold<-10
 size<-c(1,10^4) # m2
 

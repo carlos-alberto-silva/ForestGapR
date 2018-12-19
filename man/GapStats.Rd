@@ -2,7 +2,7 @@
 % Please edit documentation in R/GapsStats.R
 \name{GapStats}
 \alias{GapStats}
-\title{Forest canopy Gaps Stats}
+\title{Forest Canopy Gaps Stats}
 \usage{
 GapStats(gap_layer, chm_layer)
 }
@@ -36,7 +36,7 @@ library(raster)
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_CAU_2012)
 
-# set height tresholds (e.g. 10 meters)
+# set height thresholds (e.g. 10 meters)
 threshold<-10
 size<-c(5,10^4) # m2
 
