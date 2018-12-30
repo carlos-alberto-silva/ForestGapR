@@ -44,7 +44,7 @@ GapStats <- function(gap_layer, chm_layer){
   GiniCoeff <- function (x, finite.sample = TRUE, na.rm = TRUE){
     if (!na.rm && any(is.na(x))) 
       return(NA_real_)
-    x <- as.numeric(na.omit(x))
+    x <- as.numeric(stats::na.omit(x))
     n <- length(x)
     x <- sort(x)
     G <- 2 * sum(x * 1L:n)/sum(x) - (n + 1L)
