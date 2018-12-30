@@ -199,7 +199,7 @@ gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
 gaps_spdf<-merge(gaps_spdf,gaps_stats, by="gap_id")
 head(gaps_spdf@data)
 ```
-    ##    gap_id        1       2 gap_area chm_max chm_min chm_mean chm_sd chm_gini chm_range
+    ##    gap_id        x       y gap_area chm_max chm_min chm_mean chm_sd chm_gini chm_range
     ## 1       1 173088.7 9673197       34    9.22    1.09     5.12   2.61     0.30      8.13
     ## 10     10 173044.2 9673143       18    9.90    2.74     5.06   2.18     0.23      7.16
     ## 11     11 173038.7 9673143       13    9.91    1.75     5.47   2.94     0.31      8.16
