@@ -40,20 +40,19 @@
 #'gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
 #'
 #'@export
-GiniCoeff <- function (x, finite.sample = TRUE, na.rm = TRUE){
-  if (!na.rm && any(is.na(x))) 
-    return(NA_real_)
-  x <- as.numeric(na.omit(x))
-  n <- length(x)
-  x <- sort(x)
-  G <- 2 * sum(x * 1L:n)/sum(x) - (n + 1L)
-  if (finite.sample) 
-    GC <- G/(n - 1L)
-  else GC <- G/n
-  return(GC)
-}
-
 GapStats <- function(gap_layer, chm_layer){
+  GiniCoeff <- function (x, finite.sample = TRUE, na.rm = TRUE){
+    if (!na.rm && any(is.na(x))) 
+      return(NA_real_)
+    x <- as.numeric(stats::na.omit(x))
+    n <- length(x)
+    x <- sort(x)
+    G <- 2 * sum(x * 1L:n)/sum(x) - (n + 1L)
+    if (finite.sample) 
+      GC <- G/(n - 1L)
+    else GC <- G/n
+    return(GC)
+  }
   gap_list <- data.frame(raster::freq(gap_layer))
   gap_list$count <- gap_list$count*raster::res(chm_layer)[1]^2
   gap_list <- gap_list[!is.na(gap_list[,1]),]
