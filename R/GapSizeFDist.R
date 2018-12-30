@@ -15,7 +15,7 @@
 #'
 #'@section Details: For the Zeta distribution with parameter \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}, the probability that gap size takes
 #'the integer value k is:
-#'\deqn{f(k) =\frac{k^{-\lambda}}{]\\zeta(\lambda)}}{f(k) = k^-\lambda/\zeta(\lambda)}
+#'\deqn{f(k) =\frac{k^{-\lambda}}{\\zeta(\lambda)}}{f(k) = k^-\lambda/\zeta(\lambda)}
 #'where the denominator is the Riemann zeta function, and is undefined for \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} = 1.
 #'The function calculates maximum likelihood estimates (MLE) of \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} by minimizing a negative
 #'log-likelihood function (Asner et 2013).
