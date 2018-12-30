@@ -25,8 +25,9 @@ This function computes a series of forest canopy gap statistics
 \item chm_max - Maximum canopy height (m) within gap boundary
 \item chm_min - Minimum canopy height (m) within gap boundary
 \item chm_mean - Mean canopy height (m) within gap boundary
-\item chm_sd - Standard Deviation of canopy height (m) within gap boundary
-\item chm_range - Range of canopy height (m) within gap boundary
+\item chm_sd - Standard Deviation of canopy heights (m) within gap boundary
+\item chm_gini - Gini Coefficient of canopy heights (m) within gap boundary
+\item chm_range - Range of canopy heights (m) within gap boundary
 }
 }
 \examples{

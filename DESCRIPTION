@@ -11,6 +11,7 @@ Authors@R: c(
     person("Wan Shafrina Wan Mohd", "Jaafar", email = "wanshafrina@ukm.edu.my ", role = ("ctb"), comment = "Reviews the documentation"),
     person("Daniel de Almeida", "Papa", email = "almeidapapa@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
     person("Adrian", "Cardil", email = "adriancardil@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Ruben", "Valbuena", email = "r.valbuena@bangor.ac.uk", role = ("cre","ctb")),
     person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"))
 Maintainer: Carlos Alberto Silva <carlos_engflorestal@outlook.com>
 Depends:
