@@ -4,6 +4,8 @@
 ![Github](https://img.shields.io/badge/Github-0.0.1-green.svg)
 ![licence](https://img.shields.io/badge/Licence-GPL--3-blue.svg) 
 
+![licence](https://cranlogs.r-pkg.org/badges/grand-total/ForestGapR)
+
 ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis 
 
 The GapForestR package provides functions to i) automate canopy gaps detection, ii) compute a series of forest canopy gap statistics, including gap-size frequency distributions, iii) map gap dynamics (when multi-temporal ALS data are available), and iv) convert the data among spatial formats.
