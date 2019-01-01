@@ -44,8 +44,8 @@
 GapSPDF<-function(gap_layer){
   names(gap_layer)<-"gap_id"
   gaps_spdf <- raster::rasterToPolygons(x=gap_layer, fun=NULL, n=4, na.rm=TRUE, digits=12, dissolve=TRUE)
-  #colnames(gaps_spdf@data)<-"gap_id"
   gaps_spdf@data<-cbind(sp::coordinates(gaps_spdf),gaps_spdf@data)
+  colnames(gaps_spdf@data)<-c("x","y","gap_id")
   return(gaps_spdf)
 }
 
