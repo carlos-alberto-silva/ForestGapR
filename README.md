@@ -235,7 +235,7 @@ gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf)
 gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 ```
-> gaps_cau2012_SpatPattern
+> Spatial Pattern in 2012
 
 	Clark-Evans test
 	No edge correction
@@ -247,7 +247,7 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6a_2012.png)
 
-> gaps_cau2014_SpatPattern
+> Spatial Pattern in 2014
 
 	Clark-Evans test
 	No edge correction
