@@ -181,7 +181,7 @@ data(ALS_CHM_DUC)
 
 # set height thresholds (e.g. 10 meters)
 threshold<-10
-size<-c(1,1000) # m2
+size<-c(4,1000) # m2
 
 # Detecting forest gaps
 gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
