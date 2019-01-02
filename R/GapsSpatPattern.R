@@ -5,10 +5,11 @@
 #'
 #'@usage GapsSpatPattern(gap_SPDF_layer) 
 #'
-#'@param gap_SPDF_layer A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps (output of  \code{\link[ForestGapR:GapsSPDF]{GapsSPDF}} function).
+#'@param gap_SPDF_layer A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps. 
+#'Output of (\code{\link[ForestGapR:GapSPDF]{GapSPDF}}) function.
 #'An object of the classs \code{\link[sp]{SpatialPointsDataFrame-class}} 
 #'@return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
-#'@author Ruben Valbuena.
+#'@author Ruben Valbuena and Carlos Alberto Silva.
 #'
 #'@examples
 #'\dontrun{
@@ -37,6 +38,7 @@
 #'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 #'}
 #'@export
+#'@importFrom methods as
 GapsSpatPattern<-function(gap_SPDF_layer){
   gaps_spdf.centres <- rgeos::gCentroid(gap_SPDF_layer, byid=T)
   P  <- as(gaps_spdf.centres, "ppp")
