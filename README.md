@@ -137,39 +137,7 @@ grid(4,4)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_3.png)
 
-### Forest Gap Change Detection
-```r
-#Loading raster and viridis libraries
-library(raster)
-library(viridis)
 
-# ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
-data(ALS_CHM_CAU_2012)
-data(ALS_CHM_CAU_2014)
-
-# set height thresholds (e.g. 10 meters)
-threshold<-10
-size<-c(1,1000) # m2
-
-# Detecting forest gaps
-gaps_cau2012<-getForestGaps(chm_layer=ALS_CHM_CAU_2012, threshold=threshold, size=size)
-gaps_cau2014<-getForestGaps(chm_layer=ALS_CHM_CAU_2014, threshold=threshold, size=size)
-
-# Detecting forest gaps changes
-Gap_changes<-GapChangeDec(gap_layer1=gaps_cau2012,gap_layer2=gaps_cau2014)
-
-# Plotting ALS-derived CHM and forest gaps
-par(mfrow=c(1,3))
-plot(ALS_CHM_CAU_2012, main="Forest Canopy Gap - 2012", col=viridis(10))
-plot(gaps_cau2012, add=TRUE, col="red", legend=FALSE)
-
-plot(ALS_CHM_CAU_2014,  main="Forest Canopy Gap - 2014", col=viridis(10))
-plot(gaps_cau2014, add=TRUE,col="blue", legend=FALSE)
-
-plot(ALS_CHM_CAU_2014,main="Forest Gaps Changes Detection",col=viridis(10))
-plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
-```
-![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_4.png)
 ### Forest Canopy Gaps as Spatial Polygons
 ```r
 #Loading raster and viridis libraries
@@ -208,6 +176,42 @@ head(gaps_spdf@data)
     ## 12     12 173182.0 9673138       10    9.92    3.75     7.77   2.27     0.16      6.17
     ## 13     13 173067.7 9673121       66    9.94    0.99     5.31   2.91     0.32      8.95
     ## 14     14 173179.9 9673132        7   10.00    5.83     7.41   1.53     0.12      4.17
+
+### Forest Gap Change Detection
+```r
+#Loading raster and viridis libraries
+library(raster)
+library(viridis)
+
+# ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
+data(ALS_CHM_CAU_2012)
+data(ALS_CHM_CAU_2014)
+
+# set height thresholds (e.g. 10 meters)
+threshold<-10
+size<-c(1,1000) # m2
+
+# Detecting forest gaps
+gaps_cau2012<-getForestGaps(chm_layer=ALS_CHM_CAU_2012, threshold=threshold, size=size)
+gaps_cau2014<-getForestGaps(chm_layer=ALS_CHM_CAU_2014, threshold=threshold, size=size)
+
+# Detecting forest gaps changes
+Gap_changes<-GapChangeDec(gap_layer1=gaps_cau2012,gap_layer2=gaps_cau2014)
+
+# Plotting ALS-derived CHM and forest gaps
+par(mfrow=c(1,3))
+plot(ALS_CHM_CAU_2012, main="Forest Canopy Gap - 2012", col=viridis(10))
+plot(gaps_cau2012, add=TRUE, col="red", legend=FALSE)
+
+plot(ALS_CHM_CAU_2014,  main="Forest Canopy Gap - 2014", col=viridis(10))
+plot(gaps_cau2014, add=TRUE,col="blue", legend=FALSE)
+
+plot(ALS_CHM_CAU_2014,main="Forest Gaps Changes Detection",col=viridis(10))
+plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
+```
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_4.png)
+
+
 
 ### References
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy     gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
