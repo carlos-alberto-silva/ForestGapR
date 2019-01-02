@@ -240,10 +240,10 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 	Clark-Evans test
 	No edge correction
 	Z-test
-
-data:  P
-R = 0.90165, p-value = 0.002509
-alternative hypothesis: two-sided
+	
+	data:  P
+	R = 0.90165, p-value = 0.002509
+	alternative hypothesis: two-sided
 
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6a_2012.png)
 
@@ -253,9 +253,9 @@ alternative hypothesis: two-sided
 	No edge correction
 	Z-test
 
-data:  P
-R = 1.0733, p-value = 0.1742
-alternative hypothesis: two-sided
+	data:  P
+	R = 1.0733, p-value = 0.1742
+	alternative hypothesis: two-sided
 
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6b_2014.png)
 
