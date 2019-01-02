@@ -135,6 +135,46 @@ grid(4,4)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_3.png)
 
+### Forest Canopy Gaps as Spatial Polygons
+```r
+#Loading raster and viridis libraries
+library(raster)
+library(viridis)
+
+# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
+data(ALS_CHM_DUC)
+
+# set height thresholds (e.g. 10 meters)
+threshold<-10
+size<-c(1,1000) # m2
+
+# Detecting forest gaps
+gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
+
+# Converting raster layer to SpatialPolygonsDataFrame
+gaps_spdf<-GapSPDF(gap_layer=gaps_duc)
+
+# Plotting ALS-derived CHM and forest gaps
+plot(ALS_CHM_DUC, col=viridis(10), xlim=c(173025,173125), ylim=c(9673100,96731200))
+plot(gaps_spdf, add=TRUE, border="red", lwd=2)
+```
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_5.png)
+
+```r
+# Populating the attribute table of Gaps_spdf with gaps statistics
+gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
+gaps_spdf<-merge(gaps_spdf,gaps_stats, by="gap_id")
+head(gaps_spdf@data)
+```
+    ##    gap_id        x       y gap_area chm_max chm_min chm_mean chm_sd chm_gini chm_range
+    ## 1       1 173088.7 9673197       34    9.22    1.09     5.12   2.61     0.30      8.13
+    ## 10     10 173044.2 9673143       18    9.90    2.74     5.06   2.18     0.23      7.16
+    ## 11     11 173038.7 9673143       13    9.91    1.75     5.47   2.94     0.31      8.16
+    ## 12     12 173182.0 9673138       10    9.92    3.75     7.77   2.27     0.16      6.17
+    ## 13     13 173067.7 9673121       66    9.94    0.99     5.31   2.91     0.32      8.95
+    ## 14     14 173179.9 9673132        7   10.00    5.83     7.41   1.53     0.12      4.17
+
+
 ### Forest Gap Change Detection
 ```r
 #Loading raster and viridis libraries
@@ -168,44 +208,56 @@ plot(ALS_CHM_CAU_2014,main="Forest Gaps Changes Detection",col=viridis(10))
 plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
 ```
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_4.png)
-### Forest Canopy Gaps as Spatial Polygons
+
+### Spatial Pattern of Forest Canopy Gaps
 ```r
 #Loading raster and viridis libraries
 library(raster)
 library(viridis)
 
-# ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+# ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
+data(ALS_CHM_CAU_2012)
+data(ALS_CHM_CAU_2014)
 
 # set height thresholds (e.g. 10 meters)
-threshold<-10
-size<-c(4,1000) # m2
+threshold <- 10
+size <- c(1,1000) # m2
 
 # Detecting forest gaps
-gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
+gaps_cau2012 <- getForestGaps(chm_layer = ALS_CHM_CAU_2012, threshold=threshold, size=size)
+gaps_cau2014 <- getForestGaps(chm_layer = ALS_CHM_CAU_2014, threshold=threshold, size=size)
 
-# Converting raster layer to SpatialPolygonsDataFrame
-gaps_spdf<-GapSPDF(gap_layer=gaps_duc)
+# Converting raster layers to SpatialPolygonsDataFrame
+gaps_cau2012_spdf <- GapSPDF(gap_layer = gaps_cau2012)
+gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 
-# Plotting ALS-derived CHM and forest gaps
-plot(ALS_CHM_DUC, col=viridis(10), xlim=c(173025,173125), ylim=c(9673100,96731200))
-plot(gaps_spdf, add=TRUE, border="red", lwd=2)
+# Spatial pattern analysis of each year
+gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf)
+gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 ```
-![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_5.png)
+> gaps_cau2012_SpatPattern
 
-```r
-# Populating the attribute table of Gaps_spdf with gaps statistics
-gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
-gaps_spdf<-merge(gaps_spdf,gaps_stats, by="gap_id")
-head(gaps_spdf@data)
-```
-    ##    gap_id        x       y gap_area chm_max chm_min chm_mean chm_sd chm_gini chm_range
-    ## 1       1 173088.7 9673197       34    9.22    1.09     5.12   2.61     0.30      8.13
-    ## 10     10 173044.2 9673143       18    9.90    2.74     5.06   2.18     0.23      7.16
-    ## 11     11 173038.7 9673143       13    9.91    1.75     5.47   2.94     0.31      8.16
-    ## 12     12 173182.0 9673138       10    9.92    3.75     7.77   2.27     0.16      6.17
-    ## 13     13 173067.7 9673121       66    9.94    0.99     5.31   2.91     0.32      8.95
-    ## 14     14 173179.9 9673132        7   10.00    5.83     7.41   1.53     0.12      4.17
+	Clark-Evans test
+	No edge correction
+	Z-test
+
+data:  P
+R = 0.90165, p-value = 0.002509
+alternative hypothesis: two-sided
+
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6a_2012.png)
+
+> gaps_cau2014_SpatPattern
+
+	Clark-Evans test
+	No edge correction
+	Z-test
+
+data:  P
+R = 1.0733, p-value = 0.1742
+alternative hypothesis: two-sided
+
+![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6b_2014.png)
 
 ### References
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy     gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
