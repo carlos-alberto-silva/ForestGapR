@@ -38,10 +38,8 @@
 #'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 #'}
 #'@export
-#'@importFrom methods as
 GapsSpatPattern<-function(gap_SPDF_layer){
-  gaps_spdf.centres <- rgeos::gCentroid(gap_SPDF_layer, byid=T)
-  P  <- as(gaps_spdf.centres, "ppp")
+  P  <- spatstat::as.ppp(sp::coordinates(gap_SPDF_layer),raster::extent(gap_SPDF_layer)[])
   K <- spatstat::envelope(P, spatstat::Kest, nsim=99, verbose=F)
   L <- spatstat::envelope(P, spatstat::Lest, nsim=99, verbose=F)
   graphics::par(mfrow=c(1,2), mar=c(6, 5, 4, 2))
