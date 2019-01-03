@@ -234,8 +234,8 @@ gaps_cau2012_spdf <- GapSPDF(gap_layer = gaps_cau2012)
 gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 
 # Spatial pattern analysis of each year
-gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf)
-gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
+gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf, ALS_CHM_CAU_2012)
+gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 ```
 > Spatial Pattern in 2012
 
@@ -244,7 +244,7 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 	Z-test
 	
 	data:  P
-	R = 0.90165, p-value = 0.002509
+	R = 0.89312, p-value = 0.001022
 	alternative hypothesis: two-sided
 
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6a_2012.png)
@@ -256,7 +256,7 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 	Z-test
 
 	data:  P
-	R = 1.0733, p-value = 0.1742
+	R = 1.0596, p-value = 0.2688
 	alternative hypothesis: two-sided
 
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/Fig_6b_2014.png)
