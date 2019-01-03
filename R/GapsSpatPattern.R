@@ -8,6 +8,7 @@
 #'@param gap_SPDF_layer A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps. 
 #'Output of (\code{\link[ForestGapR:GapSPDF]{GapSPDF}}) function.
 #'An object of the classs \code{\link[sp]{SpatialPointsDataFrame-class}} 
+#'#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.
 #'@return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 #'@author Ruben Valbuena and Carlos Alberto Silva.
 #'
@@ -38,8 +39,8 @@
 #'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
 #'}
 #'@export
-GapsSpatPattern<-function(gap_SPDF_layer){
-  P  <- spatstat::as.ppp(sp::coordinates(gap_SPDF_layer),raster::extent(gap_SPDF_layer)[])
+GapsSpatPattern<-function(gap_SPDF_layer, chm_layer){
+  P  <- spatstat::as.ppp(sp::coordinates(gap_SPDF_layer),raster::extent(chm_layer)[])
   K <- spatstat::envelope(P, spatstat::Kest, nsim=99, verbose=F)
   L <- spatstat::envelope(P, spatstat::Lest, nsim=99, verbose=F)
   graphics::par(mfrow=c(1,2), mar=c(6, 5, 4, 2))
