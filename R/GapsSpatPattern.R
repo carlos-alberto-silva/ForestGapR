@@ -3,7 +3,7 @@
 #'@description This function computes second order statistics of forest canopy gaps (\code{\link[raster]{raster}}) to
 #'\code{\link[sp]{SpatialPointsDataFrame-class}} objects
 #'
-#'@usage GapsSpatPattern(gap_SPDF_layer) 
+#'@usage GapsSpatPattern(gap_SPDF_layer,chm_layer) 
 #'
 #'@param gap_SPDF_layer A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps. 
 #'Output of (\code{\link[ForestGapR:GapSPDF]{GapSPDF}}) function.
@@ -35,8 +35,8 @@
 #'gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 #'
 #'# Spatial pattern analysis of each year
-#'gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf)
-#'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf)
+#'gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf,chm_layer = ALS_CHM_CAU_2012)
+#'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf,chm_layer = ALS_CHM_CAU_2014)
 #'}
 #'@export
 GapsSpatPattern<-function(gap_SPDF_layer, chm_layer){
