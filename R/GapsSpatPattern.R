@@ -8,7 +8,7 @@
 #'@param gap_SPDF_layer A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps. 
 #'Output of (\code{\link[ForestGapR:GapSPDF]{GapSPDF}}) function.
 #'An object of the classs \code{\link[sp]{SpatialPointsDataFrame-class}} 
-#'#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.
+#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.
 #'@return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 #'@author Ruben Valbuena and Carlos Alberto Silva.
 #'
@@ -35,8 +35,8 @@
 #'gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 #'
 #'# Spatial pattern analysis of each year
-#'gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf,chm_layer = ALS_CHM_CAU_2012)
-#'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf,chm_layer = ALS_CHM_CAU_2014)
+#'gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf, ALS_CHM_CAU_2012)
+#'gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 #'}
 #'@export
 GapsSpatPattern<-function(gap_SPDF_layer, chm_layer){
