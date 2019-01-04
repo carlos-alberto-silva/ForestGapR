@@ -11,6 +11,8 @@
 #'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.
 #'@return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 #'@author Ruben Valbuena and Carlos Alberto Silva.
+#'@references \emph{spatstat} package,see \code{\link[spatstat]{Kest}},\code{\link[spatstat]{Lest}},
+#'and \code{\link[spatstat]{clarkevans.test}}.
 #'
 #'@examples
 #'\dontrun{

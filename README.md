@@ -1,9 +1,9 @@
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_1.png)<br/>
 
 ![Github](https://img.shields.io/badge/CRAN-0.0.1-green.svg)
-![Github](https://img.shields.io/badge/Github-0.0.1-green.svg)
+![Github](https://img.shields.io/badge/Github-0.0.2-green.svg)
 ![licence](https://img.shields.io/badge/Licence-GPL--3-blue.svg) 
-![licence](https://img.shields.io/badge/R_Forge-0.0.1-green.svg) 
+![licence](https://img.shields.io/badge/R_Forge-0.0.2-green.svg) 
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/ForestGapR)
 
 ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis 

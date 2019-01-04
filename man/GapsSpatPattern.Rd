@@ -47,6 +47,10 @@ gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf, ALS_CHM_CAU_2012)
 gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 }
 }
+\references{
+\emph{spatstat} package,see \code{\link[spatstat]{Kest}},\code{\link[spatstat]{Lest}},
+and \code{\link[spatstat]{clarkevans.test}}.
+}
 \author{
 Ruben Valbuena and Carlos Alberto Silva.
 }
