@@ -51,12 +51,13 @@
 #'@export
 GapSizeFDist<-function(gaps_stats,...){
   # zeta function from VGAM package
-  thehist <-  graphics::hist(gaps_stats$gap_area, br=seq(0,max(gaps_stats$gap_area)), plot=F)
+  thehist<-table(as.factor(round(gaps_stats$gap_area)))     
+  #thehist <-  graphics::hist(gaps_stats$gap_area, br=seq(0,max(gaps_stats$gap_area)), plot=F)
   fit <- stats::optimize(function(data, lambda){
      2*sum(-log(data^-lambda/VGAM::zeta(x=lambda)))
   }, data=gaps_stats$gap_area, lower = 1.0001, upper = 20, maximum = F)
-
-  graphics::plot(y=thehist$counts, x=thehist$breaks[2:length(thehist$breaks)],log="xy",...)
+  graphics::plot(y = t, x = as.numeric(names(thehist)), log = "xy")
+  #graphics::plot(y=thehist$counts, x=thehist$breaks[2:length(thehist$breaks)],log="xy",...)
   eqn <- bquote(lambda == .(round(fit$minimum,3)) * "," ~~ n == .(nrow(gaps_stats)))
   graphics::legend("topright",legend=eqn, bty="n")
   return(c(lambda=fit$minimum,likelihood=fit$objective))
