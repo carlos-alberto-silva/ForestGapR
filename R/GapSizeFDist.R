@@ -56,7 +56,9 @@ GapSizeFDist<-function(gaps_stats,...){
   fit <- stats::optimize(function(data, lambda){
      2*sum(-log(data^-lambda/VGAM::zeta(x=lambda)))
   }, data=gaps_stats$gap_area, lower = 1.0001, upper = 20, maximum = F)
-  graphics::plot(y = as.numeric(paste0(thehist)), x = as.numeric(names(thehist)), log = "xy")
+  gap.size<-as.numeric(names(thehist))
+  gap.freq<- as.numeric(paste0(thehist))
+  graphics::plot(y=gap.freq, x =gap.size, log = "xy",...)
   #graphics::plot(y=thehist$counts, x=thehist$breaks[2:length(thehist$breaks)],log="xy",...)
   eqn <- bquote(lambda == .(round(fit$minimum,3)) * "," ~~ n == .(nrow(gaps_stats)))
   graphics::legend("topright",legend=eqn, bty="n")
