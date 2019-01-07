@@ -51,7 +51,7 @@
 #'@export
 GapSizeFDist<-function(gaps_stats,...){
   # zeta function from VGAM package
-  thehist <-  graphics::hist(gaps_stats$gap_area, br=seq(0,max(gaps_stats$gap_area),1), plot=F)
+  thehist <-  graphics::hist(gaps_stats$gap_area, br=seq(0,max(gaps_stats$gap_area)), plot=F)
   fit <- stats::optimize(function(data, lambda){
      2*sum(-log(data^-lambda/VGAM::zeta(x=lambda)))
   }, data=gaps_stats$gap_area, lower = 1.0001, upper = 20, maximum = F)
