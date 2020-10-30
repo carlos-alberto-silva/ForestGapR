@@ -1,10 +1,10 @@
 ![](https://github.com/carlos-alberto-silva/ForestGapR/blob/master/readme/fig_1.png)<br/>
 
-![Github](https://img.shields.io/badge/CRAN-0.0.2-green.svg)
-![Github](https://img.shields.io/badge/Github-0.0.2-green.svg)
+![Github](https://img.shields.io/badge/CRAN-0.0.3-green.svg)
+![Github](https://img.shields.io/badge/Github-0.0.3-green.svg)
 [![Rdoc](http://www.rdocumentation.org/badges/version/ForestGapR)](http://www.rdocumentation.org/packages/ForestGapR)
 ![licence](https://img.shields.io/badge/Licence-GPL--3-blue.svg) 
-![R_Forge](https://img.shields.io/badge/R_Forge-0.0.2-green.svg) 
+![R_Forge](https://img.shields.io/badge/R_Forge-0.0.3-green.svg) 
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/ForestGapR)
 [![Build Status](https://travis-ci.com/carlos-alberto-silva/ForestGapR.svg?branch=master)](https://travis-ci.com/carlos-alberto-silva/ForestGapR)
 
