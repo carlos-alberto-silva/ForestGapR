@@ -18,7 +18,7 @@ Maintainer: Carlos Alberto Silva <carlos_engflorestal@outlook.com>
 Depends:
     R (>= 3.4.0)
 Imports:
-    raster, igraph, VGAM, sp, graphics, stats, viridis, rgeos, spatstat,poweRlaw
+    raster, igraph, VGAM, sp, graphics, stats, viridis, rgeos, spatstat, poweRlaw
 Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps.
 License: GPL-3
 Encoding: UTF-8
