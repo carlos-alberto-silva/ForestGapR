@@ -2,6 +2,11 @@
 env:
   global:
   - PKGNAME=ForestGapR
+    NOT_CRAN: true
+    _R_CHECK_FORCE_SUGGESTS: true
+    _R_CHECK_CRAN_INCOMING_: true
+    R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+    
 matrix:
   include:
   - r: release
@@ -31,10 +36,6 @@ script:
   - R CMD build .
   - travis_wait 30 R CMD check *tar.gz --as-cran
   - R CMD INSTALL . --build
-
-after_script:
-  - cat ${PKGNAME}.Rcheck/00check.log
-  - cat ${PKGNAME}.Rcheck/00install.out
 
   # safelist
 branches:
