@@ -28,19 +28,6 @@ matrix:
     
 language: r
 
-script:
-  - R CMD build .
-  - travis_wait 30 R CMD check *tar.gz --as-cran
-  - R CMD INSTALL . --build
-
-  # safelist
-branches:
-  only:
-  - master
-  - /^v[\d\.]*$/
-before_deploy:
-  - 'export PKGVERSION=$(sed -n ''/^Version:/s/Version: \(.*\)/\1/p'' DESCRIPTION)'
-  - echo "Upload file glob is $(echo $PKGNAME)_${PKGVERSION}*"
 
 deploy:
   provider: releases
