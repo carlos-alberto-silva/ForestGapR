@@ -43,8 +43,8 @@ branches:
   - master
   - /^v[\d\.]*$/
 before_deploy:
-- 'export PKGVERSION=$(sed -n ''/^Version:/s/Version: \(.*\)/\1/p'' DESCRIPTION)'
-- echo "Upload file glob is $(echo $PKGNAME)_${PKGVERSION}*"
+  - 'export PKGVERSION=$(sed -n ''/^Version:/s/Version: \(.*\)/\1/p'' DESCRIPTION)'
+  - echo "Upload file glob is $(echo $PKGNAME)_${PKGVERSION}*"
 
 deploy:
   provider: releases
