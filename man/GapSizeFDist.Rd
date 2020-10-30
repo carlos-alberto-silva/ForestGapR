@@ -4,31 +4,24 @@
 \alias{GapSizeFDist}
 \title{Forest Canopy Gap-size Frequency Distributions}
 \usage{
-GapSizeFDist(gaps_stats,...)
+GapSizeFDist(gaps_stats,method,...)
 }
 \arguments{
 \item{gaps_stats}{A data.frame containing basic statistics of forest gaps. Output of (\code{\link[ForestGapR:GapStats]{GapStats}}) function.}
 
+\item{method}{If method='Asner_2013' the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is computed following the method described Asner et al. (2013) 
+and if methods='Hanel_2017' the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is computed following the method described in Hanel et al. (2017)}
+
 \item{...}{Supplementary parameters for (\code{\link[graphics:plot]{plot}}).}
 }
 \value{
-A log-log plot of gap-size Frequency Distributions and a vector containing the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} and
-minimum value of the likelihood. The parameter \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is the scaling exponent for the
-power-law Zeta distribution fitted to the data using maximum likelihood. See details section.
+A log-log plot of gap-size Frequency Distributions and a list containing: i) \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}, ii) the gap-size Frequency Distributions and ii) method used. 
+The \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} parameter is derived for the Zeta distribution using a maximum likelihood estimator. See details section.
 }
 \description{
-This function quantifies the size frequency distribution of forest canopy gaps using Zeta distribution,
-which is a discrete power-law probability density.
+This function quantifies and estimates the power-law exponent \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}
+of the forest canopy gap size-frequency distribution using Zeta distribution.
 }
-\section{Details}{
- For the Zeta distribution with parameter \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}, the probability that gap size takes
-the integer value k is:
-\deqn{f(k) =\frac{k^{-\lambda}}{\\zeta(\lambda)}}{f(k) = k^-\lambda/\zeta(\lambda)}
-where the denominator is the Riemann zeta function, and is undefined for \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} = 1.
-The function calculates maximum likelihood estimates (MLE) of \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} by minimizing a negative
-log-likelihood function (Asner et 2013).
-}
-
 \examples{
 #Loading raster library
 library(raster)
@@ -36,7 +29,7 @@ library(raster)
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
 
-# set height tresholds (e.g. 10 meters)
+# set height thresholds (e.g. 10 meters)
 threshold<-10
 size<-c(1,10^4) # m2
 
@@ -47,17 +40,17 @@ gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
 
 # Gap-size Frequency Distributions
-GapSizeFDist(gaps_stats=gaps_stats, col="forestgreen", pch=16, cex=1,
+GapSizeFDist(gaps_stats=gaps_stats, method="Hanel_2017", col="forestgreen", pch=16, cex=1,
 axes=FALSE,ylab="Gap Frequency",xlab=as.expression(bquote("Gap Size" ~ (m^2) )))
 axis(1);axis(2)
 grid(4,4)
 
 }
 \references{
+Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. Fitting power-laws in empirical data with estimators that work for all exponents,
+PloS one, vol. 12, no. 2, p. e0170920, 2017.
+
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
 
-White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89: 905–912.
-}
-\author{
-Carlos Alberto Silva. This function was implemented based on the R script provided by Asner et al. (2013)
+White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89: 905â912.
 }

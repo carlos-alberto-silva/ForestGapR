@@ -9,6 +9,9 @@
 
 ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis 
 
+Authors: Carlos Alberto, Ekena Rangel, Midhun Mohan Danilo Roberti Alves de Almeida, Eben North Broadbent, 
+Wan Shafrina Wan Mohd Jaafar, Adrian Cardil, Ruben Valbuena, Toby Jackson and Carine Klauberg
+
 The GapForestR package provides functions to i) automate canopy gaps detection, ii) compute a series of forest canopy gap statistics, including gap-size frequency distributions and spatial distribution, iii) map gap dynamics (when multi-temporal ALS data are available), and iv) convert the data among spatial formats.
 
 ## Installation
@@ -134,7 +137,7 @@ gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
 
 # Gap-size Frequency Distributions
-GapSizeFDist(gaps_stats=gaps_stats, col="forestgreen", pch=16, cex=1,
+GapSizeFDist(gaps_stats=gaps_stats, method="Hanel_2017", col="forestgreen", pch=16, cex=1,
 axes=FALSE,ylab="Gap Frequency",xlab=as.expression(bquote("Gap Size" ~ (m^2) )))
 axis(1);axis(2)
 grid(4,4)
@@ -267,6 +270,9 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 
 
 ### References
+
+Silva, C.A., Pinage,E., Mohan, M., Valbuena, R., Almeida, D., Broadbent,E., Jaafar, W., Papa, D., Cardil, A., Klauberg, C. ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis. Methods Ecol Evol. 2019;10:1347–1356 <https://doi.org/10.1111/2041-210X.13211>
+
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy     gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
 
 White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89:   905–912.
