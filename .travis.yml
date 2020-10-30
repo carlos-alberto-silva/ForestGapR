@@ -28,7 +28,7 @@ deploy:
   file_glob: true
   file: ${PKGNAME}_${PKGVERSION}_${TRAVIS_OS_NAME}*
   overwrite: true
-  skip_cleanup: true
+  cleanup: true
   on:
     repo: carlos-alberto-silva/ForestGapR
     tags: true
