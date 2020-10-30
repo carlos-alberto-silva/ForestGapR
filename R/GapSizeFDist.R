@@ -14,11 +14,13 @@
 #'@references
 #'
 #'Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. (2013). Fitting power-laws in empirical data with estimators that work for all exponents,
-#'PloS one, vol. 12, no. 2, p. e0170920.
+#'PloS one, vol. 12, no. 2, p. e0170920.https://doi.org/10.1371/journal.pone.0170920
 #'
-#'Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
+#'Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). 
+#'Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.https://doi.org/10.1371/journal.pone.0060875
 #'
-#'White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89,905-912.
+#'White, E.P, Enquist, B.J, Green, J.L. (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89,905-912.
+#'https://doi.org/10.1890/07-1288.1
 #'
 #'@examples
 #'#Loading raster library
