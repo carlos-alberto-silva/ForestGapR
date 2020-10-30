@@ -1,2 +1,14 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^examples\.R$
+^.*TODO-.*$
+^notrack.*$
+.travis.yml
+^windows$
+^readme$
+^.vscode$
+^Meta$
+^doc$
+^.*\.dll$
+^.*\.o$
+.*.git$

@@ -28,7 +28,6 @@ matrix:
     
 language: r
 
-
 deploy:
   provider: releases
   file_glob: true
