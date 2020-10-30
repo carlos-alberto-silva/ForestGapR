@@ -19,7 +19,7 @@
 #'
 #'Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
 #'
-#'White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89: 905â912.
+#'White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89,905-912.
 #'
 #'@examples
 #'#Loading raster library

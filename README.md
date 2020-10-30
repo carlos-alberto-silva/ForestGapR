@@ -278,7 +278,7 @@ Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. Fitting power-laws in empir
 
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. 2013. Forest canopy  gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875. https://doi.org/10.1371/journal.pone.0060875
 
-White EP, Enquist BJ, Green JL. 2008. On estimating the exponent of powerlaw frequency distributions. Ecology 89:905–912.
+White EP, Enquist BJ, Green JL. 2008. On estimating the exponent of powerlaw frequency distributions. Ecology 89, 905–912.
 https://doi.org/10.1890/07-1288.1
 
 Sustainable Landscape Brazil. 2018. https://www.paisagenslidar.cnptia.embrapa.br/webgis/. (accessed in August 2018).  
