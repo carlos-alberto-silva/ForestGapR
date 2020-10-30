@@ -272,7 +272,7 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 
 ### References
 
-Silva, C.A., Pinage,E., Mohan, M., Valbuena, R., Almeida, D., Broadbent,E., Jaafar, W., Papa, D., Cardil, A., Klauberg, C.2019. ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis. Methods Ecol Evolution. 10:1347–1356 https://doi.org/10.1111/2041-210X.13211
+Silva, C.A., Pinage,E., Mohan, M., Valbuena, R., Almeida, D., Broadbent,E., Jaafar, W., Papa, D., Cardil, A., Klauberg, C.2019. ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis. Methods Ecol Evolution. 10, 1347–1356 https://doi.org/10.1111/2041-210X.13211
 
 Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. Fitting power-laws in empirical data with estimators that work for all exponents,PloS one, vol. 12, no. 2, p. e0170920, 2017.https://doi.org/10.1371/journal.pone.0170920
 
@@ -281,6 +281,7 @@ Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Mar
 White EP, Enquist BJ, Green JL. 2008. On estimating the exponent of powerlaw frequency distributions. Ecology 89, 905–912.
 https://doi.org/10.1890/07-1288.1
 
-Sustainable Landscape Brazil. 2018. https://www.paisagenslidar.cnptia.embrapa.br/webgis/. (accessed in August 2018).  
+Sustainable Landscape Brazil. 2018. https://www.paisagenslidar.cnptia.embrapa.br/webgis/. (accessed in August 2018).
+
 ### Acknowledgements
 ALS data from Adolfo Ducke (ALS_CHM_DUC) Forest Reserve and Cauaxi Forest (ALS_CHM_CAU_2012 and ALS_CHM_CAU_2014) used as exemple datasets were acquired by the Sustainable Landscapes Brazil project supported by the Brazilian Agricultural Research Corporation (EMBRAPA), the US Forest Service, USAID, and the US Department of State. 

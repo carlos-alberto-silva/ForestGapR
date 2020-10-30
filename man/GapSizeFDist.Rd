@@ -19,8 +19,7 @@ A log-log plot of gap-size Frequency Distributions and a list containing: i) \if
 The \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} parameter is derived for the Zeta distribution using a maximum likelihood estimator. See details section.
 }
 \description{
-This function quantifies and estimates the power-law exponent \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}
-of the forest canopy gap size-frequency distribution using Zeta distribution.
+This function quantifies forest canopy gap size-frequency distributions and estimates power-law exponent (\ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}) from the Zeta distribution.
 }
 \examples{
 #Loading raster library
@@ -47,10 +46,10 @@ grid(4,4)
 
 }
 \references{
-Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. Fitting power-laws in empirical data with estimators that work for all exponents,
-PloS one, vol. 12, no. 2, p. e0170920, 2017.
+Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. (2013). Fitting power-laws in empirical data with estimators that work for all exponents,
+PloS one, vol. 12, no. 2, p. e0170920.
 
 Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.
 
-White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89: 905â912.
+White EP, Enquist BJ, Green JL (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89,905-912.
 }

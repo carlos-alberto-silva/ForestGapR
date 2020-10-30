@@ -6,11 +6,25 @@ matrix:
   include:
   - r: release
     os: linux
+    arch: amd64          # optional, this is default, routes to a full VM
+    dist: focal          # or bionic | xenial | trusty | precise with xenial as default
     env: BADGE=linux
     cache:
       - ccache
       - packages
-
+  - r: release
+    os: osx
+    env:
+      - BADGE=osx
+    cache:
+      - ccache
+      - packages
+      
+  - os: windows
+    env:
+      - BADGE=windows
+    language: bash
+    
 language: r
 
 script:
@@ -22,6 +36,14 @@ after_script:
   - cat ${PKGNAME}.Rcheck/00check.log
   - cat ${PKGNAME}.Rcheck/00install.out
 
+  # safelist
+branches:
+  only:
+  - master
+  - /^v[\d\.]*$/
+before_deploy:
+- 'export PKGVERSION=$(sed -n ''/^Version:/s/Version: \(.*\)/\1/p'' DESCRIPTION)'
+- echo "Upload file glob is $(echo $PKGNAME)_${PKGVERSION}*"
 
 deploy:
   provider: releases
