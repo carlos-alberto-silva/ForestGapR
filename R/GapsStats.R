@@ -5,8 +5,8 @@
 #'
 #'@usage GapStats(gap_layer, chm_layer)
 #'
-#'@param gap_layer ALS-derived gap as RasterLayer (\code{\link[raster:raster]{raster}}) object (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function). An object of the classs RasterLayer.
-#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) used in \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function. An object of the classs RasterLayer.
+#'@param gap_layer ALS-derived gap as [`raster::RasterLayer-class`] object (output of  [getForestGaps()] function). An object of the class RasterLayer.
+#'@param chm_layer ALS-derived Canopy Height Model (CHM) [`raster::RasterLayer-class`] used in [getForestGaps()] function. An object of the class [`raster::RasterLayer-class`].
 #'@return A data.frame containing forest canopy gap statistics
 #'@author Carlos Alberto Silva.
 #'@details

@@ -1,18 +1,18 @@
 #'Spatial Pattern Analysis of Forest Canopy Gaps
 #'
-#'@description This function computes second order statistics of forest canopy gaps (\code{\link[raster]{raster}}) to
-#'\code{\link[sp]{SpatialPointsDataFrame-class}} objects
 #'
-#'@usage GapsSpatPattern(gap_SPDF_layer,chm_layer) 
+#'@description This function computes second order statistics of forest canopy gaps ([`raster::RasterLayer-class`]) to
+#'[`sp::SpatialPointsDataFrame-class`] objects
 #'
-#'@param gap_SPDF_layer A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps. 
-#'Output of (\code{\link[ForestGapR:GapSPDF]{GapSPDF}}) function.
-#'An object of the classs \code{\link[sp]{SpatialPointsDataFrame-class}} 
-#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.
+#'
+#'@param gap_SPDF_layer A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps. 
+#'Output of [GapSPDF()] function.
+#'An object of the class [`sp::SpatialPointsDataFrame-class`] 
+#'@param chm_layer ALS-derived Canopy Height Model (CHM) ([`raster::RasterLayer-class`]) object. An object of the class [`raster::RasterLayer-class`].
 #'@return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 #'@author Ruben Valbuena and Carlos Alberto Silva.
-#'@references \emph{spatstat} package,see \code{\link[spatstat]{Kest}},\code{\link[spatstat]{Lest}},
-#'and \code{\link[spatstat]{clarkevans.test}}.
+#'@references `spatstat` package, see [spatstat::Lest()], [spatstat::Kest()],
+#'and [spatstat::clarkevans.test()].
 #'
 #'@examples
 #'\dontrun{

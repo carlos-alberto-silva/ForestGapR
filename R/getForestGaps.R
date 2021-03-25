@@ -4,11 +4,11 @@
 #'
 #'@usage getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 #'
-#'@param chm_layer ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.
+#'@param chm_layer ALS-derived Canopy Height Model (CHM) ([`raster::RasterLayer-class`]) object. An object of the class [`raster::RasterLayer-class`].
 #'@param threshold Height threshold for gap detection. Default is 10 m.
 #'@param size A vector containing the minimum and maximum gap size - area (m2).
-#'Gaps with area < size[1] or area > size[2] are not considered. Default is 1 m2 and 1ha.
-#'@return Forest Gaps. An object of the classs RasterLayer.
+#'Gaps with area < size\[1\] or area > size\[2\] are not considered. Default is 1 m2 and 1ha.
+#'@return Forest Gaps. An object of the class RasterLayer.
 #'@author Carlos Alberto Silva.
 #'@examples
 #'

@@ -1,12 +1,12 @@
 #'Forest Gaps Change Detection
 #'
-#'@description This function detects forest canopy gap changes across two forest gap RasterLayer (\code{\link[raster]{raster}}) objects
+#'@description This function detects forest canopy gap changes across two forest gap [`raster::RasterLayer-class`] objects
 #'
 #'@usage GapChangeDec(gap_layer1,gap_layer2)
 #'
-#'@param gap_layer1 ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 1. (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
-#'@param gap_layer2 ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 2. (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
-#'@return A RasterLayer (\code{\link[raster]{raster}}) object representing forest gap change area
+#'@param gap_layer1 ALS-derived gap as an [`raster::RasterLayer-class`] object at time 1. (output of  [getForestGaps()] function).
+#'@param gap_layer2 ALS-derived gap as an [`raster::RasterLayer-class`] object at time 2. (output of  [getForestGaps()] function).
+#'@return A [`raster::RasterLayer-class`] object representing forest gap change area
 #'@author Carlos Alberto Silva.
 #'
 #'@examples
