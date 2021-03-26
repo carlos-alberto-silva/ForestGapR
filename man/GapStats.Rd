@@ -7,9 +7,9 @@
 GapStats(gap_layer, chm_layer)
 }
 \arguments{
-\item{gap_layer}{ALS-derived gap as RasterLayer (\code{\link[raster:raster]{raster}}) object (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function). An object of the classs RasterLayer.}
+\item{gap_layer}{ALS-derived gap as \code{\link[raster:Raster-classes]{raster::RasterLayer}} object (output of  \code{\link[=getForestGaps]{getForestGaps()}} function). An object of the class RasterLayer.}
 
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) used in \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function. An object of the classs RasterLayer.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) \code{\link[raster:Raster-classes]{raster::RasterLayer}} used in \code{\link[=getForestGaps]{getForestGaps()}} function. An object of the class \code{\link[raster:Raster-classes]{raster::RasterLayer}}.}
 }
 \value{
 A data.frame containing forest canopy gap statistics
@@ -17,8 +17,7 @@ A data.frame containing forest canopy gap statistics
 \description{
 This function computes a series of forest canopy gap statistics
 }
-\details{
-# List of forest gaps statistics:
+\section{List of forest gaps statistics:}{
 \itemize{
 \item gap_id: gap id
 \item gap_area - area of gap (m2)
@@ -30,6 +29,7 @@ This function computes a series of forest canopy gap statistics
 \item chm_range - Range of canopy heights (m) within gap boundary
 }
 }
+
 \examples{
 #Loading raster library
 library(raster)

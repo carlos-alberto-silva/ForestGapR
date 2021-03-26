@@ -7,15 +7,15 @@
 GapSizeFDist(gaps_stats,method,...)
 }
 \arguments{
-\item{gaps_stats}{A data.frame containing basic statistics of forest gaps. Output of (\code{\link[ForestGapR:GapStats]{GapStats}}) function.}
+\item{gaps_stats}{A data.frame containing basic statistics of forest gaps. Output of \code{\link[=GapStats]{GapStats()}} function.}
 
-\item{method}{If method='Asner_2013' the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is computed following the method described Asner et al. (2013) 
+\item{method}{If method='Asner_2013' the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is computed following the method described Asner et al. (2013)
 and if methods='Hanel_2017' the \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} is computed following the method described in Hanel et al. (2017)}
 
-\item{...}{Supplementary parameters for (\code{\link[graphics:plot]{plot}}).}
+\item{...}{Supplementary parameters for [graphics::plot()).}
 }
 \value{
-A log-log plot of gap-size Frequency Distributions and a list containing: i) \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}, ii) the gap-size Frequency Distributions and ii) method used. 
+A log-log plot of gap-size Frequency Distributions and a list containing: i) \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}, ii) the gap-size Frequency Distributions and ii) method used.
 The \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} parameter is derived for the Zeta distribution using a maximum likelihood estimator. See details section.
 }
 \description{
@@ -49,7 +49,7 @@ grid(4,4)
 Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. (2013). Fitting power-laws in empirical data with estimators that work for all exponents,
 PloS one, vol. 12, no. 2, p. e0170920.https://doi.org/10.1371/journal.pone.0170920
 
-Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013). 
+Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013).
 Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.https://doi.org/10.1371/journal.pone.0060875
 
 White, E.P, Enquist, B.J, Green, J.L. (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89,905-912.

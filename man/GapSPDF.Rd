@@ -7,17 +7,17 @@
 GapSPDF(gap_layer)
 }
 \arguments{
-\item{gap_layer}{ALS-derived gap layer (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).
-An object of the classs RasterLayer.}
+\item{gap_layer}{ALS-derived gap layer (output of \code{\link[=getForestGaps]{getForestGaps()}} function).
+An object of the class RasterLayer.}
 }
 \value{
-A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps.
+A \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} object of the forest canopy gaps.
 The output file can be exported as a ESRI shapefile using
-\code{\link[rgdal:writeOGR]{writeOGR}} function in the \emph{rgdal} package.
+\code{\link[rgdal:writeOGR]{rgdal::writeOGR()}} function in the \emph{rgdal} package.
 }
 \description{
-This function converts forest canopy gaps as RasterLayer (\code{\link[raster]{raster}}) to
-\code{\link[sp]{SpatialPointsDataFrame-class}} objects
+This function converts forest canopy gaps as \code{\link[raster:Raster-classes]{raster::RasterLayer}} to
+\code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} objects
 }
 \examples{
 \dontrun{

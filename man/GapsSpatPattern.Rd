@@ -4,21 +4,21 @@
 \alias{GapsSpatPattern}
 \title{Spatial Pattern Analysis of Forest Canopy Gaps}
 \usage{
-GapsSpatPattern(gap_SPDF_layer,chm_layer)
+GapsSpatPattern(gap_SPDF_layer, chm_layer)
 }
 \arguments{
-\item{gap_SPDF_layer}{A \code{\link[sp]{SpatialPointsDataFrame-class}} object of the forest canopy gaps. 
-Output of (\code{\link[ForestGapR:GapSPDF]{GapSPDF}}) function.
-An object of the classs \code{\link[sp]{SpatialPointsDataFrame-class}}}
+\item{gap_SPDF_layer}{A \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} object of the forest canopy gaps.
+Output of \code{\link[=GapSPDF]{GapSPDF()}} function.
+An object of the class \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}}}
 
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) (\code{\link[raster:Raster-classes]{raster::RasterLayer}}) object. An object of the class \code{\link[raster:Raster-classes]{raster::RasterLayer}}.}
 }
 \value{
 A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 }
 \description{
-This function computes second order statistics of forest canopy gaps (\code{\link[raster]{raster}}) to
-\code{\link[sp]{SpatialPointsDataFrame-class}} objects
+This function computes second order statistics of forest canopy gaps (\code{\link[raster:Raster-classes]{raster::RasterLayer}}) to
+\code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} objects
 }
 \examples{
 \dontrun{
@@ -48,8 +48,8 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 }
 }
 \references{
-\emph{spatstat} package,see \code{\link[spatstat]{Kest}},\code{\link[spatstat]{Lest}},
-and \code{\link[spatstat]{clarkevans.test}}.
+\code{\link[spatstat.core:spatstat.core-package]{spatstat}} package, see \code{\link[spatstat.core:Lest]{Lest()}}, \code{\link[spatstat.core:Kest]{Kest()}},
+and \code{\link[spatstat.core:clarkevans.test]{clarkevans.test()}}.
 }
 \author{
 Ruben Valbuena and Carlos Alberto Silva.

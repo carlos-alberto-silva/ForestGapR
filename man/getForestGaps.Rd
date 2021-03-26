@@ -7,7 +7,7 @@
 getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 }
 \arguments{
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) RasterLayer (\code{\link[raster:raster]{raster}}) object. An object of the classs RasterLayer.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) (\code{\link[raster:Raster-classes]{raster::RasterLayer}}) object. An object of the class \code{\link[raster:Raster-classes]{raster::RasterLayer}}.}
 
 \item{threshold}{Height threshold for gap detection. Default is 10 m.}
 
@@ -15,7 +15,7 @@ getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 Gaps with area < size[1] or area > size[2] are not considered. Default is 1 m2 and 1ha.}
 }
 \value{
-Forest Gaps. An object of the classs RasterLayer.
+Forest Gaps. An object of the class RasterLayer.
 }
 \description{
 This function detects forest canopy gaps on Airborne Laser Scanning(ALS)-derived Canopy Height Model (CHM).

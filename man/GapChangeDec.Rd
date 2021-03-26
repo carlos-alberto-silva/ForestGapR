@@ -7,15 +7,15 @@
 GapChangeDec(gap_layer1,gap_layer2)
 }
 \arguments{
-\item{gap_layer1}{ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 1. (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).}
+\item{gap_layer1}{ALS-derived gap as an \code{\link[raster:Raster-classes]{raster::RasterLayer}} object at time 1. (output of  \code{\link[=getForestGaps]{getForestGaps()}} function).}
 
-\item{gap_layer2}{ALS-derived gap as an RasterLayer (\code{\link[raster:raster]{raster}}) object at time 2. (output of  \code{\link[ForestGapR:getForestGaps]{getForestGaps}} function).}
+\item{gap_layer2}{ALS-derived gap as an \code{\link[raster:Raster-classes]{raster::RasterLayer}} object at time 2. (output of  \code{\link[=getForestGaps]{getForestGaps()}} function).}
 }
 \value{
-A RasterLayer (\code{\link[raster]{raster}}) object representing forest gap change area
+A \code{\link[raster:Raster-classes]{raster::RasterLayer}} object representing forest gap change area
 }
 \description{
-This function detects forest canopy gap changes across two forest gap RasterLayer (\code{\link[raster]{raster}}) objects
+This function detects forest canopy gap changes across two forest gap \code{\link[raster:Raster-classes]{raster::RasterLayer}} objects
 }
 \examples{
 \dontrun{
