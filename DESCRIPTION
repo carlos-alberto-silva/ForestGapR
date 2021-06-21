@@ -13,7 +13,8 @@ Authors@R: c(
     person("Adrian", "Cardil", email = "adriancardil@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
     person("Ruben", "Valbuena", email = "r.valbuena@bangor.ac.uk", role = c("cph","ctb")),
 	person("Toby", "Jackson", email = "tobydjackson@gmail.com", role = c("ctb")),
-    person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"))
+    person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"),
+    person("Caio", "Hamamura", email = "caiohamamura@gmail.com", role = ("ctb"), comment = "Maintenance and review"))
 Maintainer: Carlos Alberto Silva <carlos_engflorestal@outlook.com>
 Depends:
     R (>= 3.4.0)
