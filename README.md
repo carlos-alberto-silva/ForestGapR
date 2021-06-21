@@ -2,7 +2,7 @@
 
 ![Github](https://img.shields.io/badge/CRAN-0.0.3-green.svg)
 ![Github](https://img.shields.io/badge/Github-0.0.3-green.svg)
-[![Rdoc](http://www.rdocumentation.org/badges/version/ForestGapR)](http://www.rdocumentation.org/packages/ForestGapR)
+[![Rdoc](https://www.rdocumentation.org/badges/version/ForestGapR)](https://www.rdocumentation.org/packages/ForestGapR)
 ![licence](https://img.shields.io/badge/Licence-GPL--3-blue.svg) 
 ![R_Forge](https://img.shields.io/badge/R_Forge-0.0.3-green.svg) 
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/ForestGapR)
