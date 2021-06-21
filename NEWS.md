@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# ForestGapR 0.1.2
+
+* Added Caio Hamamura to list of authors
+
+
 # ForestGapR 0.1.1
 
 * Fixed link to rdocumentation http(s)
