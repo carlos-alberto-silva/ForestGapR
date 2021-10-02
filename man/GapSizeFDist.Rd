@@ -22,28 +22,30 @@ The \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} param
 This function quantifies forest canopy gap size-frequency distributions and estimates power-law exponent (\ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}) from the Zeta distribution.
 }
 \examples{
-#Loading raster library
+# Loading raster library
 library(raster)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
 
 # set height thresholds (e.g. 10 meters)
-threshold<-10
-size<-c(1,10^4) # m2
+threshold <- 10
+size <- c(1, 10^4) # m2
 
 # Detecting forest gaps
-gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
+gaps_duc <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = threshold, size = size)
 
 # Computing basic statistis of forest gap
-gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
+gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
 
 # Gap-size Frequency Distributions
-GapSizeFDist(gaps_stats=gaps_stats, method="Hanel_2017", col="forestgreen", pch=16, cex=1,
-axes=FALSE,ylab="Gap Frequency",xlab=as.expression(bquote("Gap Size" ~ (m^2) )))
-axis(1);axis(2)
-grid(4,4)
-
+GapSizeFDist(
+  gaps_stats = gaps_stats, method = "Hanel_2017", col = "forestgreen", pch = 16, cex = 1,
+  axes = FALSE, ylab = "Gap Frequency", xlab = as.expression(bquote("Gap Size" ~ (m^2)))
+)
+axis(1)
+axis(2)
+grid(4, 4)
 }
 \references{
 Hanel,R., Corominas-Murtra, B., Liu, B., Thurner, S. (2013). Fitting power-laws in empirical data with estimators that work for all exponents,

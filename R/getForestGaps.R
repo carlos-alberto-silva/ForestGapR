@@ -58,6 +58,7 @@
 #' }
 #'
 #' # plot gaps
+#' oldpar <- par(no.readonly = TRUE)
 #' par(mfrow = c(2, 2))
 #' plot(ALS_CHM_DUC, col = viridis(10), main = "Height threshold 10m")
 #' plot(gaps_stack$gaps_10m, col = "red", add = TRUE, legend = FALSE)
@@ -70,6 +71,7 @@
 #'
 #' plot(ALS_CHM_DUC, col = viridis(10), main = "Height threshold 25m")
 #' plot(gaps_stack$gaps_25m, col = "red", add = TRUE, legend = FALSE)
+#' par(oldpar)
 #' @export
 getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
   chm_layer[chm_layer > threshold] <- NA

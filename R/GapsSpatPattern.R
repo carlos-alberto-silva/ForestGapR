@@ -41,6 +41,8 @@
 #' gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 #' @export
 GapsSpatPattern <- function(gap_SPDF_layer, chm_layer) {
+  oldpar <- graphics::par(no.readonly = TRUE)
+  on.exit(graphics::par(oldpar)) 
   P <- spatstat.geom::as.ppp(sp::coordinates(gap_SPDF_layer), raster::extent(chm_layer)[])
   K <- spatstat.core::envelope(P, spatstat.core::Kest, nsim = 99, verbose = F)
   L <- spatstat.core::envelope(P, spatstat.core::Lest, nsim = 99, verbose = F)
