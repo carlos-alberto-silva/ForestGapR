@@ -3,19 +3,18 @@ Type: Package
 Title: Tropical Forest Canopy Gaps Analysis
 Version: 0.1.3
 Authors@R: c(
-    person("Carlos Alberto", "Silva", email = "carlos_engflorestal@outlook.com", role = c("aut", "cre", "cph")),
-    person("Ekena Rangel", "Pinagé", email = "ekenapinage@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Midhun", "Mohan", email = "mmohan2@ncsu.edu", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Danilo Roberti Alves de", "Almeida", email = "daniloflorestas@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Eben North", "Broadbent", email = "eben@ufl.edu", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Wan Shafrina Wan Mohd", "Jaafar", email = "wanshafrina@ukm.edu.my ", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Daniel de Almeida", "Papa", email = "almeidapapa@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Adrian", "Cardil", email = "adriancardil@gmail.com", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Ruben", "Valbuena", email = "r.valbuena@bangor.ac.uk", role = c("cph","ctb")),
-	person("Toby", "Jackson", email = "tobydjackson@gmail.com", role = c("ctb")),
-    person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("ctb"), comment = "Reviews the documentation"),
-    person("Caio", "Hamamura", email = "caiohamamura@gmail.com", role = ("ctb"), comment = "Maintenance and review"))
-Maintainer: Carlos Alberto Silva <carlos_engflorestal@outlook.com>
+    person("Carlos Alberto", "Silva", email = "carlos_engflorestal@outlook.com", role = c("aut", "cph", "cre")),
+    person("Ekena Rangel", "Pinagé", email = "ekenapinage@hotmail.com", role = ("aut"), comment = "Reviews the documentation"),
+    person("Midhun", "Mohan", email = "mmohan2@ncsu.edu", role = ("aut"), comment = "Reviews the documentation"),
+    person("Danilo Roberti Alves de", "Almeida", email = "daniloflorestas@gmail.com", role = ("aut"), comment = "Reviews the documentation"),
+    person("Eben North", "Broadbent", email = "eben@ufl.edu", role = ("aut"), comment = "Reviews the documentation"),
+    person("Wan Shafrina Wan Mohd", "Jaafar", email = "wanshafrina@ukm.edu.my ", role = ("aut"), comment = "Reviews the documentation"),
+    person("Daniel de Almeida", "Papa", email = "almeidapapa@gmail.com", role = ("aut"), comment = "Reviews the documentation"),
+    person("Adrian", "Cardil", email = "adriancardil@gmail.com", role = ("aut"), comment = "Reviews the documentation"),
+    person("Ruben", "Valbuena", email = "r.valbuena@bangor.ac.uk", role = c("cph","aut")),
+	person("Toby", "Jackson", email = "tobydjackson@gmail.com", role = c("aut")),
+    person("Caio", "Hamamura", email = "caiohamamura@gmail.com", role = ("aut"), comment = "Maintenance and review"),
+    person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("aut"), comment = "Reviews the documentation"))
 Depends:
     R (>= 3.4.0)
 Imports:
