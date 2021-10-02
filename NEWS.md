@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# ForestGapR 0.1.6
+
+- Same as previous version.
+
+
 # ForestGapR 0.1.5
 
 * Add reference to ForestGapR paper
