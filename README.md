@@ -6,7 +6,6 @@
 ![licence](https://img.shields.io/badge/Licence-GPL--3-blue.svg) 
 ![R_Forge](https://img.shields.io/badge/R_Forge-0.0.3-green.svg) 
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/ForestGapR)
-[![Build Status](https://travis-ci.com/carlos-alberto-silva/ForestGapR.svg?branch=master)](https://travis-ci.com/carlos-alberto-silva/ForestGapR)
 
 ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis 
 
