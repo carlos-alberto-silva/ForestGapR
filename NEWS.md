@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# ForestGapR 0.1.5
+
+* Add reference to ForestGapR paper
+
+
 # ForestGapR 0.1.4
 
 * Move authors role to aut instead of ctb
