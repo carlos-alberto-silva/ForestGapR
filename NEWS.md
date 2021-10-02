@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# ForestGapR 0.1.3
+
+* Restore par() whenether modified
+* Allow all examples to run
+* Use styler for better formatting
+
+
 # ForestGapR 0.1.2
 
 * Added Caio Hamamura to list of authors
