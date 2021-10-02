@@ -13,7 +13,6 @@
 #' @author Carlos Alberto Silva.
 #'
 #' @examples
-#' \dontrun{
 #' # Loading raster and viridis libraries
 #' library(raster)
 #' library(viridis)
@@ -39,7 +38,6 @@
 #' gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
 #' gaps_spdf <- merge(gaps_spdf, gaps_stats, by = "gap_id")
 #' head(gaps_spdf@data)
-#' }
 #' @export
 GapSPDF <- function(gap_layer) {
   names(gap_layer) <- "gap_id"

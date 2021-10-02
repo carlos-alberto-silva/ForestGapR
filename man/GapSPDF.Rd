@@ -20,8 +20,7 @@ This function converts forest canopy gaps as \code{\link[raster:Raster-classes]{
 \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} objects
 }
 \examples{
-\dontrun{
-#Loading raster and viridis libraries
+# Loading raster and viridis libraries
 library(raster)
 library(viridis)
 
@@ -29,24 +28,23 @@ library(viridis)
 data(ALS_CHM_DUC)
 
 # set height thresholds (e.g. 10 meters)
-threshold<-10
-size<-c(1,10^4) # m2
+threshold <- 10
+size <- c(1, 10^4) # m2
 
 # Detecting forest gaps
-gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
+gaps_duc <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = threshold, size = size)
 
 # Converting raster layer to SpatialPolygonsDataFrame
-gaps_spdf<-GapSPDF(gap_layer=gaps_duc)
+gaps_spdf <- GapSPDF(gap_layer = gaps_duc)
 
 # Plotting ALS-derived CHM and forest gaps
-plot(ALS_CHM_DUC, col=viridis(10), xlim=c(173025,173125), ylim=c(9673100,96731200))
-plot(gaps_spdf, add=TRUE, border="red", lwd=2)
+plot(ALS_CHM_DUC, col = viridis(10), xlim = c(173025, 173125), ylim = c(9673100, 96731200))
+plot(gaps_spdf, add = TRUE, border = "red", lwd = 2)
 
 # Populating the attribute table of Gaps_spdf with gaps statistics
-gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
-gaps_spdf<-merge(gaps_spdf,gaps_stats, by="gap_id")
+gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
+gaps_spdf <- merge(gaps_spdf, gaps_stats, by = "gap_id")
 head(gaps_spdf@data)
-}
 }
 \author{
 Carlos Alberto Silva.

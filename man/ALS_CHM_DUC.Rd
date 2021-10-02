@@ -26,7 +26,9 @@ Isenburg, M. LAStools—Efficient Tools for Lidar Processing. 2018. Available on
 edu/~isenburg/lastools/ (accessed on 3 October 2018).
 }
 \examples{
+library(raster)
 data(ALS_CHM_DUC)
-## plot(ALS_CHM_DUC)
+
+plot(ALS_CHM_DUC)
 }
 \keyword{ALS_CHM_DUC}

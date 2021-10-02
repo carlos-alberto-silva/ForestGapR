@@ -16,7 +16,6 @@
 #' and [`clarkevans.test()`][spatstat.core::clarkevans.test()].
 #'
 #' @examples
-#' \dontrun{
 #' # Loading raster and viridis libraries
 #' library(raster)
 #' library(viridis)
@@ -40,7 +39,6 @@
 #' # Spatial pattern analysis of each year
 #' gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf, ALS_CHM_CAU_2012)
 #' gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
-#' }
 #' @export
 GapsSpatPattern <- function(gap_SPDF_layer, chm_layer) {
   P <- spatstat.geom::as.ppp(sp::coordinates(gap_SPDF_layer), raster::extent(chm_layer)[])
