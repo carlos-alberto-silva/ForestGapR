@@ -16,6 +16,8 @@
 #' and [`clarkevans.test()`][spatstat.core::clarkevans.test()].
 #'
 #' @examples
+#' # This takes > 5 seconds!
+#' \donttest{
 #' # Loading raster and viridis libraries
 #' library(raster)
 #' library(viridis)
@@ -39,6 +41,7 @@
 #' # Spatial pattern analysis of each year
 #' gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf, ALS_CHM_CAU_2012)
 #' gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
+#' }
 #' @export
 GapsSpatPattern <- function(gap_SPDF_layer, chm_layer) {
   oldpar <- graphics::par(no.readonly = TRUE)

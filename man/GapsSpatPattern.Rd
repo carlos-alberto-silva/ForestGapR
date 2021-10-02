@@ -21,6 +21,8 @@ This function computes second order statistics of forest canopy gaps (\code{\lin
 \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} objects
 }
 \examples{
+# This takes > 5 seconds!
+\donttest{
 # Loading raster and viridis libraries
 library(raster)
 library(viridis)
@@ -44,6 +46,7 @@ gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 # Spatial pattern analysis of each year
 gaps_cau2012_SpatPattern <- GapsSpatPattern(gaps_cau2012_spdf, ALS_CHM_CAU_2012)
 gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
+}
 }
 \references{
 \code{\link[spatstat.core:spatstat.core-package]{spatstat}} package, see \code{\link[spatstat.core:Lest]{Lest()}}, \code{\link[spatstat.core:Kest]{Kest()}},
