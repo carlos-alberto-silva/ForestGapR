@@ -19,7 +19,7 @@ Depends:
     R (>= 3.4.0)
 Imports:
     raster, igraph, VGAM, sp, graphics, stats, viridis, rgeos, spatstat.core, spatstat.geom, poweRlaw
-Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps.
+Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps. Details were published in Silva et al. (2019) <doi:10.1111/2041-210X.13211>.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
