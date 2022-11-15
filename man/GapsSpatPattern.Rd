@@ -49,8 +49,8 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 }
 }
 \references{
-\code{\link[spatstat.core:spatstat.core-package]{spatstat}} package, see \code{\link[spatstat.core:Lest]{Lest()}}, \code{\link[spatstat.core:Kest]{Kest()}},
-and \code{\link[spatstat.core:clarkevans.test]{clarkevans.test()}}.
+\code{\link[spatstat.explore:spatstat.explore-package]{spatstat}} package, see \code{\link[spatstat.explore:Lest]{Lest()}}, \code{\link[spatstat.explore:Kest]{Kest()}},
+and \code{\link[spatstat.explore:clarkevans.test]{clarkevans.test()}}.
 }
 \author{
 Ruben Valbuena and Carlos Alberto Silva.
