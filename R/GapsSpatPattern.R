@@ -12,9 +12,11 @@
 #' @return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 #' @author Ruben Valbuena and Carlos Alberto Silva.
 #' @references
-#' [`spatstat`][spatstat.core::spatstat.core-package] package, see [`Lest()`][spatstat.core::Lest()], [`Kest()`][spatstat.core::Kest()],
-#' and [`clarkevans.test()`][spatstat.core::clarkevans.test()].
-#'
+#' \code{\link[spatstat.explore]{spatstat.explore-package}}, see 
+#' \code{\link[spatstat.explore]{Lest}},
+#' \code{\link[spatstat.explore]{Kest}} and 
+#' \code{\link[spatstat.explore]{clarkevans.test}}
+#' 
 #' @examples
 #' # This takes > 5 seconds!
 #' \donttest{
@@ -47,11 +49,11 @@ GapsSpatPattern <- function(gap_SPDF_layer, chm_layer) {
   oldpar <- graphics::par(no.readonly = TRUE)
   on.exit(graphics::par(oldpar)) 
   P <- spatstat.geom::as.ppp(sp::coordinates(gap_SPDF_layer), raster::extent(chm_layer)[])
-  K <- spatstat.core::envelope(P, spatstat.core::Kest, nsim = 99, verbose = F)
-  L <- spatstat.core::envelope(P, spatstat.core::Lest, nsim = 99, verbose = F)
+  K <- spatstat.explore::envelope(P, spatstat.explore::Kest, nsim = 99, verbose = F)
+  L <- spatstat.explore::envelope(P, spatstat.explore::Lest, nsim = 99, verbose = F)
   graphics::par(mfrow = c(1, 2), mar = c(6, 5, 4, 2))
   graphics::plot(K)
   graphics::plot(L)
-  CE <- spatstat.core::clarkevans.test(P)
+  CE <- spatstat.explore::clarkevans.test(P)
   return(CE)
 }
