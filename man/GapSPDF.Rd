@@ -12,8 +12,8 @@ An object of the class RasterLayer.}
 }
 \value{
 A \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} object of the forest canopy gaps.
-The output file can be exported as a ESRI shapefile using
-\code{\link[rgdal:writeOGR]{rgdal::writeOGR()}} function in the \emph{rgdal} package.
+The result can be exported as a ESRI shapefile using
+\code{\link[raster:shapefile]{raster::shapefile()}} function in the \emph{raster} package.
 }
 \description{
 This function converts forest canopy gaps as \code{\link[raster:Raster-classes]{raster::RasterLayer}} to

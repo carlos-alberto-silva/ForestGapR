@@ -8,8 +8,8 @@
 #' @param gap_layer ALS-derived gap layer (output of [getForestGaps()] function).
 #' An object of the class RasterLayer.
 #' @return A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps.
-#' The output file can be exported as a ESRI shapefile using
-#' [rgdal::writeOGR()] function in the \emph{rgdal} package.
+#' The result can be exported as a ESRI shapefile using
+#' [raster::shapefile()] function in the \emph{raster} package.
 #' @author Carlos Alberto Silva.
 #'
 #' @examples
