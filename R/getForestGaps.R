@@ -73,6 +73,7 @@
 #' plot(gaps_stack$gaps_25m, col = "red", add = TRUE, legend = FALSE)
 #' par(oldpar)
 #' @export
+#' @importFrom viridis viridis
 getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
   chm_layer[chm_layer > threshold] <- NA
   chm_layer[chm_layer <= threshold] <- 1
