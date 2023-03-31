@@ -1,7 +1,7 @@
 Version: 1.0
 
 RestoreWorkspace: Default
-SaveWorkspace: Default
+SaveWorkspace: No
 AlwaysSaveHistory: Default
 
 EnableCodeIndexing: Yes
@@ -15,3 +15,5 @@ LaTeX: pdfLaTeX
 BuildType: Package
 PackageUseDevtools: Yes
 PackageInstallArgs: --no-multiarch --with-keep.source
+PackageCheckArgs: --as-cran --no-multiarch
+PackageRoxygenize: rd,collate,namespace

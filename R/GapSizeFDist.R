@@ -19,7 +19,7 @@
 #' Asner, G.P., Kellner, J.R., Kennedy-Bowdoin, T., Knapp, D.E., Anderson, C. & Martin, R.E. (2013).
 #' Forest canopy gap distributions in the Southern Peruvian Amazon. PLoS One, 8, e60875.https://doi.org/10.1371/journal.pone.0060875
 #'
-#' White, E.P, Enquist, B.J, Green, J.L. (2008) On estimating the exponent of powerlaw frequency distributions. Ecology 89,905-912.
+#' White, E.P, Enquist, B.J, Green, J.L. (2008) On estimating the exponent of power law frequency distributions. Ecology 89,905-912.
 #' https://doi.org/10.1890/07-1288.1
 #'
 #' @examples
@@ -36,7 +36,7 @@
 #' # Detecting forest gaps
 #' gaps_duc <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = threshold, size = size)
 #'
-#' # Computing basic statistis of forest gap
+#' # Computing basic statistics of forest gap
 #' gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
 #'
 #' # Gap-size Frequency Distributions
