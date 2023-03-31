@@ -24,6 +24,7 @@ This function converts forest canopy gaps as \code{\link[raster:Raster-classes]{
 library(raster)
 library(viridis)
 
+
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
 

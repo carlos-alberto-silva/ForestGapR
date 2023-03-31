@@ -10,10 +10,11 @@
 #' @author Carlos Alberto Silva.
 #'
 #' @examples
-#' #
+#' \dontrun{
 #' # Loading raster and viridis libraries
 #' library(raster)
 #' library(viridis)
+#' 
 #'
 #' # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
 #' data(ALS_CHM_CAU_2012)
@@ -41,6 +42,8 @@
 #' plot(ALS_CHM_CAU_2014, main = "Forest Gap Changes Detected", col = viridis(10))
 #' plot(Gap_changes, add = TRUE, col = "orange", legend = FALSE)
 #' par(oldpar)
+#' }
+#' @import igraph
 #' @export
 GapChangeDec <- function(gap_layer1, gap_layer2) {
   gap_layer1[!is.na(gap_layer1)] <- 1

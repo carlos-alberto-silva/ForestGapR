@@ -18,6 +18,7 @@
 #' # Loading raster and viridis libraries
 #' library(raster)
 #' library(viridis)
+#' 
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #' data(ALS_CHM_DUC)
@@ -47,7 +48,7 @@
 #' nthresholds <- c(10, 15, 20, 25)
 #' size <- c(1, 10^4) # m2
 #'
-#' # creating an empy raster stack to store multplie gaps as RasterLayers
+#' # creating an empy raster stack to store multiple gaps as RasterLayers
 #' gaps_stack <- stack()
 #'
 #' # Gap detection

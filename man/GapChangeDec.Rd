@@ -18,10 +18,11 @@ A \code{\link[raster:Raster-classes]{raster::RasterLayer}} object representing f
 This function detects forest canopy gap changes across two forest gap \code{\link[raster:Raster-classes]{raster::RasterLayer}} objects
 }
 \examples{
-#
+\dontrun{
 # Loading raster and viridis libraries
 library(raster)
 library(viridis)
+
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
 data(ALS_CHM_CAU_2012)
@@ -49,6 +50,7 @@ plot(gaps_cau2014, add = TRUE, col = "red", legend = FALSE)
 plot(ALS_CHM_CAU_2014, main = "Forest Gap Changes Detected", col = viridis(10))
 plot(Gap_changes, add = TRUE, col = "orange", legend = FALSE)
 par(oldpar)
+}
 }
 \author{
 Carlos Alberto Silva.

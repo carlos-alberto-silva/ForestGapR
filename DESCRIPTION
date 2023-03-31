@@ -1,35 +1,46 @@
-Package: ForestGapR
 Type: Package
+Package: ForestGapR
 Title: Tropical Forest Canopy Gaps Analysis
-Version: 0.1.6
+Version: 0.1.7
 Authors@R: c(
-    person("Carlos Alberto", "Silva", email = "carlos_engflorestal@outlook.com", role = c("aut", "cph", "cre")),
-    person("Ekena Rangel", "Pinagé", email = "ekenapinage@hotmail.com", role = ("aut"), comment = "Reviews the documentation"),
-    person("Midhun", "Mohan", email = "mmohan2@ncsu.edu", role = ("aut"), comment = "Reviews the documentation"),
-    person("Danilo Roberti Alves de", "Almeida", email = "daniloflorestas@gmail.com", role = ("aut"), comment = "Reviews the documentation"),
-    person("Eben North", "Broadbent", email = "eben@ufl.edu", role = ("aut"), comment = "Reviews the documentation"),
-    person("Wan Shafrina Wan Mohd", "Jaafar", email = "wanshafrina@ukm.edu.my ", role = ("aut"), comment = "Reviews the documentation"),
-    person("Daniel de Almeida", "Papa", email = "almeidapapa@gmail.com", role = ("aut"), comment = "Reviews the documentation"),
-    person("Adrian", "Cardil", email = "adriancardil@gmail.com", role = ("aut"), comment = "Reviews the documentation"),
-    person("Ruben", "Valbuena", email = "r.valbuena@bangor.ac.uk", role = c("cph","aut")),
-	  person("Toby", "Jackson", email = "tobydjackson@gmail.com", role = c("aut")),
-	  person("Jeff", "Atkins", email = "jeffrey.atkins@usda.gov", role = c("aut")),
-    person("Caio", "Hamamura", email = "caiohamamura@gmail.com", role = ("aut"), comment = "Maintenance and review"),
-    person("Carine", "Klauberg", email = "carine_klauberg@hotmail.com", role = ("aut"), comment = "Reviews the documentation"))
+    person("Carlos Alberto", "Silva", , "carlos_engflorestal@outlook.com", role = c("aut", "cph", "cre")),
+    person("Ekena Rangel", "Pinagé", , "ekenapinage@hotmail.com", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Midhun", "Mohan", , "mmohan2@ncsu.edu", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Danilo Roberti Alves de", "Almeida", , "daniloflorestas@gmail.com", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Eben North", "Broadbent", , "eben@ufl.edu", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Wan Shafrina Wan Mohd", "Jaafar", , "wanshafrina@ukm.edu.my ", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Daniel de Almeida", "Papa", , "almeidapapa@gmail.com", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Adrian", "Cardil", , "adriancardil@gmail.com", role = "aut",
+           comment = "Reviews the documentation"),
+    person("Ruben", "Valbuena", , "r.valbuena@bangor.ac.uk", role = c("cph", "aut")),
+    person("Toby", "Jackson", , "tobydjackson@gmail.com", role = "aut"),
+    person("Jeff", "Atkins", , "jeffrey.atkins@usda.gov", role = "aut"),
+    person("Caio", "Hamamura", , "caiohamamura@gmail.com", role = "aut",
+           comment = "Maintenance and review"),
+    person("Carine", "Klauberg", , "carine_klauberg@hotmail.com", role = "aut",
+           comment = "Reviews the documentation")
+  )
+Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps. Details were published in Silva and others (2019) <doi:10.1111/2041-210X.13211>.
+License: GPL-3
 Depends:
     R (>= 3.4.0)
 Imports:
-    raster,
-    VGAM,
-    sp,
     graphics,
-    stats,
-    viridis,
+    igraph,
+    poweRlaw,
+    raster,
+    sp,
     spatstat.explore,
     spatstat.geom,
-    poweRlaw
-Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps. Details were published in Silva et al. (2019) <doi:10.1111/2041-210X.13211>.
-License: GPL-3
+    stats,
+    VGAM,
+    viridis
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
