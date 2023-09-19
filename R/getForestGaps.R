@@ -90,3 +90,18 @@ getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
   names(gaps) <- "gaps"
   return(gaps)
 }
+# ' # Updated 'getForestGaps' function for compatibility with the terra package:
+# ' getGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
+# '  chm_layer[chm_layer > threshold] <- NA
+# '  chm_layer[chm_layer <= threshold] <- 1
+# '  gaps <- terra::patches(chm_layer, directions = 8, allowGaps = FALSE)
+# '  rcl <- terra::freq(gaps)
+# '  rcl[, 2] <- rcl[, 2] * terra::res(chm_layer)[1]^2
+# '  z <- terra::classify(gaps, rcl = rcl, right = FALSE)
+# '  z[is.na(gaps)] <- NA
+# '  gaps[z > size[2]] <- NA
+# '  gaps[z < size[1]] <- NA
+# '  gaps <- terra::patches(gaps, directions = 8, allowGaps = FALSE)
+# '  names(gaps) <- "gaps"
+# '  return(gaps)
+# '}
