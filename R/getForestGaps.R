@@ -20,8 +20,9 @@
 #' library(viridis)
 #' 
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#' ALS_CHM_DUC<-rast(ALS_CHM_DUC)
-#' 
+#' data(ALS_CHM_DUC)
+#' rast(ALS_CHM_DUC)
+#'
 #' # Plotting chm
 #' plot(ALS_CHM_DUC, col = viridis(10), main = "ALS CHM")
 #' grid()
