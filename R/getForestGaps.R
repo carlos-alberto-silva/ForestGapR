@@ -8,7 +8,7 @@
 #' @param threshold Height threshold for gap detection. Default is 10 m.
 #' @param size A vector containing the minimum and maximum gap size - area (m2).
 #' Gaps with area < size\[1\] or area > size\[2\] are not considered. Default is 1 m2 and 1ha.
-#' @return Forest Gaps. An object of the class RasterLayer.
+#' @return Forest Gaps. An object of the class SpatRaster.
 #' @author Carlos Alberto Silva.
 #' @examples
 #'
