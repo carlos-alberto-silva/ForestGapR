@@ -15,10 +15,9 @@
 #' # =======================================================================#
 #' # Importing ALS-derived Canopy Height Model (CHM)
 #' # =======================================================================#
-#' # Loading raster and viridis libraries
-#' library(raster)
+#' # Loading terra and viridis libraries
+#' library(terra)
 #' library(viridis)
-#' 
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #' data(ALS_CHM_DUC)
@@ -75,33 +74,19 @@
 #' par(oldpar)
 #' @export
 #' @importFrom viridis viridis
-getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
-  chm_layer[chm_layer > threshold] <- NA
-  chm_layer[chm_layer <= threshold] <- 1
-  gaps <- raster::clump(chm_layer, directions = 8, gap = FALSE)
-  rcl <- raster::freq(gaps)
-  rcl[, 2] <- rcl[, 2] * raster::res(chm_layer)[1]^2
-  rcl <- cbind(rcl[, 1], rcl)
-  z <- raster::reclassify(gaps, rcl = rcl, right = NA)
-  z[is.na(gaps)] <- NA
-  gaps[z > size[2]] <- NA
-  gaps[z < size[1]] <- NA
-  gaps <- raster::clump(gaps, directions = 8, gap = FALSE)
-  names(gaps) <- "gaps"
-  return(gaps)
-}
+
 # ' # Updated 'getForestGaps' function for compatibility with the terra package:
-# ' getGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
-# '  chm_layer[chm_layer > threshold] <- NA
-# '  chm_layer[chm_layer <= threshold] <- 1
-# '  gaps <- terra::patches(chm_layer, directions = 8, allowGaps = FALSE)
-# '  rcl <- terra::freq(gaps)
-# '  rcl[, 2] <- rcl[, 2] * terra::res(chm_layer)[1]^2
-# '  z <- terra::classify(gaps, rcl = rcl, right = FALSE)
-# '  z[is.na(gaps)] <- NA
-# '  gaps[z > size[2]] <- NA
-# '  gaps[z < size[1]] <- NA
-# '  gaps <- terra::patches(gaps, directions = 8, allowGaps = FALSE)
-# '  names(gaps) <- "gaps"
-# '  return(gaps)
-# '}
+getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
+chm_layer[chm_layer > threshold] <- NA
+chm_layer[chm_layer <= threshold] <- 1
+gaps <- terra::patches(chm_layer, directions = 8, allowGaps = FALSE)
+rcl <- terra::freq(gaps)
+rcl[, 2] <- rcl[, 2] * terra::res(chm_layer)[1]^2
+z <- terra::classify(gaps, rcl = rcl, right = FALSE)
+z[is.na(gaps)] <- NA
+gaps[z > size[2]] <- NA
+gaps[z < size[1]] <- NA
+gaps <- terra::patches(gaps, directions = 8, allowGaps = FALSE)
+names(gaps) <- "gaps"
+return(gaps)
+}
