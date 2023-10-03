@@ -5,8 +5,8 @@
 #'
 #' @usage GapStats(gap_layer, chm_layer)
 #'
-#' @param gap_layer ALS-derived gap as [`raster::RasterLayer-class`] object (output of  [getForestGaps()] function). An object of the class RasterLayer.
-#' @param chm_layer ALS-derived Canopy Height Model (CHM) [`raster::RasterLayer-class`] used in [getForestGaps()] function. An object of the class [`raster::RasterLayer-class`].
+#' @param gap_layer ALS-derived gap as [`terra::SpatRaster-class`] object (output of  [getForestGaps()] function). An object of the class SpatRaster.
+#' @param chm_layer ALS-derived Canopy Height Model (CHM) [`terra::SpatRaster-class`] used in [getForestGaps()] function. An object of the class [`terra::SpatRaster-class`].
 #' @return A data.frame containing forest canopy gap statistics
 #' @author Carlos Alberto Silva.
 #' @details
@@ -23,8 +23,8 @@
 #' }
 #'
 #' @examples
-#' # Loading raster library
-#' library(raster)
+#' # Loading terra library
+#' library(terra)
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #' data(ALS_CHM_CAU_2012)
@@ -55,15 +55,38 @@ GapStats <- function(gap_layer, chm_layer) {
     }
     return(GC)
   }
-  gap_list <- data.frame(raster::freq(gap_layer))
-  gap_list$count <- gap_list$count * raster::res(chm_layer)[1]^2
+  
+  Range_Func <- function(x) {
+    max_val <- max(x, na.rm = TRUE)
+    min_val <- min(x, na.rm = TRUE)
+    range_val <- max_val - min_val
+    return(range_val)
+  }
+  
+  gap_list <- data.frame(terra::freq(gap_layer))
+  gap_list$count <- gap_list$count * terra::res(gap_layer)[1]^2
   gap_list <- gap_list[!is.na(gap_list[, 1]), ]
-  gap_list$chm_max <- tapply(chm_layer[], gap_layer[], max)
-  gap_list$chm_min <- tapply(chm_layer[], gap_layer[], min)
-  gap_list$chm_mean <- round(tapply(chm_layer[], gap_layer[], mean), 2)
-  gap_list$chm_sd <- round(tapply(chm_layer[], gap_layer[], stats::sd), 2)
-  gap_list$chm_gini <- round(tapply(chm_layer[], gap_layer[], GiniCoeff), 2)
-  gap_list$chm_range <- round(gap_list$chm_max - gap_list$chm_min, 2)
-  colnames(gap_list) <- c("gap_id", "gap_area", "chm_max", "chm_min", "chm_mean", "chm_sd", "chm_gini", "chm_range")
+  chm_max <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = max)
+  chm_min <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = min)
+  chm_mean <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = mean), 2)
+  chm_sd <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = sd), 2)
+  chm_gini <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), GiniCoeff), 2)
+  chm_range <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), Range_Func), 2)
+  
+  # Rename columns
+  colnames(chm_max) <- c("gap_id", "chm_max")
+  colnames(chm_min) <- c("gap_id", "chm_min")
+  colnames(chm_mean) <- c("gap_id", "chm_mean")
+  colnames(chm_sd) <- c("gap_id", "chm_sd")
+  colnames(chm_gini) <- c("gap_id", "chm_gini")
+  colnames(chm_range)<- c("gap_id", "chm_range")
+  
+  # Merge all results into one data frame
+  gap_list <- merge(chm_max, chm_min, by = "gap_id")
+  gap_list <- merge(gap_list, chm_mean, by = "gap_id")
+  gap_list <- merge(gap_list, chm_sd, by = "gap_id")
+  gap_list <- merge(gap_list, chm_gini, by = "gap_id")
+  gap_list <- merge(gap_list, chm_range, by = "gap_id")
+  
   return(gap_list)
 }
