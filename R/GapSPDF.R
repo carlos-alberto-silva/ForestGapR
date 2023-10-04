@@ -1,22 +1,23 @@
 #' Forest Canopy Gaps as Spatial Polygons
 #'
-#' @description This function converts forest canopy gaps as [`raster::RasterLayer-class`] to
+#' @description This function converts forest canopy gaps as [`terra::SpatRaster-class`] to
 #' [`sp::SpatialPointsDataFrame-class`] objects
 #'
 #' @usage GapSPDF(gap_layer)
 #'
 #' @param gap_layer ALS-derived gap layer (output of [getForestGaps()] function).
-#' An object of the class RasterLayer.
+#' An object of the class SpatRaster.
 #' @return A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps.
 #' The result can be exported as a ESRI shapefile using
-#' [raster::shapefile()] function in the \emph{raster} package.
+#' [sf::st_write()] function in the \emph{sf} package.
 #' @author Carlos Alberto Silva.
 #'
 #' @examples
-#' # Loading raster and viridis libraries
-#' library(raster)
+#' # Loading terra and viridis libraries
+#' library(terra)
 #' library(viridis)
-#' 
+#' library(sf)
+#' library(sp)
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #' data(ALS_CHM_DUC)
@@ -40,10 +41,13 @@
 #' gaps_spdf <- merge(gaps_spdf, gaps_stats, by = "gap_id")
 #' head(gaps_spdf@data)
 #' @export
-GapSPDF <- function(gap_layer) {
-  names(gap_layer) <- "gap_id"
-  gaps_spdf <- raster::rasterToPolygons(x = gap_layer, fun = NULL, n = 4, na.rm = TRUE, digits = 12, dissolve = TRUE)
-  gaps_spdf@data <- cbind(sp::coordinates(gaps_spdf), gaps_spdf@data)
-  colnames(gaps_spdf@data) <- c("x", "y", "gap_id")
+GapSPDF <- function(gap_layer){
+  gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
+  names(gaps_poly) <- "gap_id"
+  gaps_sf <- sf::st_as_sf(gaps_poly)
+  gaps_df <- terra::as.data.frame(terra::centroids(gaps_poly), geom="XY")
+  sf_polys<- sf::as_Spatial(gaps_sf)
+  gaps_spdf<- sp::SpatialPolygonsDataFrame(sf_polys, gaps_df)
   return(gaps_spdf)
 }
+
