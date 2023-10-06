@@ -1,4 +1,4 @@
-#' Forest Canopy Gaps as Spatial Polygons
+t#' Forest Canopy Gaps as Spatial Polygons
 #'
 #' @description This function converts forest canopy gaps as [`terra::SpatRaster-class`] to
 #' [`sp::SpatialPointsDataFrame-class`] objects
@@ -8,8 +8,8 @@
 #' @param gap_layer ALS-derived gap layer (output of [getForestGaps()] function).
 #' An object of the class SpatRaster.
 #' @return A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps.
-#' The result can be exported as a ESRI shapefile using
-#' [sf::st_write()] function in the \emph{sf} package.
+#' The result can be converted to a SpatVector and exported as a ESRI shapefile using
+#' [terra::writeVector()] function in the \emph{terra} package.
 #' @author Carlos Alberto Silva.
 #'
 #' @examples
@@ -40,7 +40,11 @@
 #' gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
 #' gaps_spdf <- merge(gaps_spdf, gaps_stats, by = "gap_id")
 #' head(gaps_spdf@data)
-#' @export
+#' # Convert to SpatVector for export 
+#' terra::vect(gaps_spdf)
+#' # Save the SpatVector object to the Shapefile
+  terra::writeVector(gaps_spdf, 'output_shapefile.shp', overwrite = TRUE)
+
 GapSPDF <- function(gap_layer){
   gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
   names(gaps_poly) <- "gap_id"
