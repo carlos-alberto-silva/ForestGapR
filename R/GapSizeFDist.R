@@ -23,8 +23,8 @@
 #' https://doi.org/10.1890/07-1288.1
 #'
 #' @examples
-#' # Loading raster library
-#' library(raster)
+#' # Loading terra library
+#' library(terra)
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #' data(ALS_CHM_DUC)
