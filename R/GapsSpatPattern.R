@@ -8,7 +8,7 @@
 #' @param gap_SPDF_layer A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps.
 #' Output of [GapSPDF()] function.
 #' An object of the class [`sp::SpatialPointsDataFrame-class`]
-#' @param chm_layer ALS-derived Canopy Height Model (CHM) ([`raster::RasterLayer-class`]) object. An object of the class [`raster::RasterLayer-class`].
+#' @param chm_layer ALS-derived Canopy Height Model (CHM) ([`terra::SpatRaster-class`]) object. An object of the class [`raster::RasterLayer-class`].
 #' @return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 #' @author Ruben Valbuena and Carlos Alberto Silva.
 #' @references
@@ -20,8 +20,8 @@
 #' @examples
 #' # This takes > 5 seconds!
 #' \donttest{
-#' # Loading raster and viridis libraries
-#' library(raster)
+#' # Loading terra and viridis libraries
+#' library(terra)
 #' library(viridis)
 #'
 #' # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
@@ -45,12 +45,16 @@
 #' gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 #' }
 #' @export
-GapsSpatPattern <- function(gap_SPDF_layer, chm_layer) {
+function (gap_SPDF_layer, chm_layer) 
+{
   oldpar <- graphics::par(no.readonly = TRUE)
-  on.exit(graphics::par(oldpar)) 
-  P <- spatstat.geom::as.ppp(sp::coordinates(gap_SPDF_layer), raster::extent(chm_layer)[])
-  K <- spatstat.explore::envelope(P, spatstat.explore::Kest, nsim = 99, verbose = F)
-  L <- spatstat.explore::envelope(P, spatstat.explore::Lest, nsim = 99, verbose = F)
+  on.exit(graphics::par(oldpar))
+  P <- spatstat.geom::as.ppp(sp::coordinates(gap_SPDF_layer), 
+                             terra::ext(chm_layer)[])
+  K <- spatstat.explore::envelope(P, spatstat.explore::Kest, 
+                                  nsim = 99, verbose = F)
+  L <- spatstat.explore::envelope(P, spatstat.explore::Lest, 
+                                  nsim = 99, verbose = F)
   graphics::par(mfrow = c(1, 2), mar = c(6, 5, 4, 2))
   graphics::plot(K)
   graphics::plot(L)
