@@ -1,7 +1,7 @@
 #' Spatial Pattern Analysis of Forest Canopy Gaps
 #'
 #'
-#' @description This function computes second order statistics of forest canopy gaps ([`raster::RasterLayer-class`]) to
+#' @description This function computes second order statistics of forest canopy gaps ([`terra::SpatRaster-class`]) to
 #' [`sp::SpatialPointsDataFrame-class`] objects
 #'
 #'
