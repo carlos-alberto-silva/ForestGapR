@@ -45,7 +45,7 @@
 #' gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 #' }
 #' @export
-function (gap_SPDF_layer, chm_layer) 
+GapSpatPattern <-function (gap_SPDF_layer, chm_layer) 
 {
   oldpar <- graphics::par(no.readonly = TRUE)
   on.exit(graphics::par(oldpar))
