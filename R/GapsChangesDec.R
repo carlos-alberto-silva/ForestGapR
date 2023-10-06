@@ -1,18 +1,18 @@
 #' Forest Gaps Change Detection
 #'
-#' @description This function detects forest canopy gap changes across two forest gap [`raster::RasterLayer-class`] objects
+#' @description This function detects forest canopy gap changes across two forest gap [`terra::SpatRaster-class`] objects
 #'
 #' @usage GapChangeDec(gap_layer1,gap_layer2)
 #'
-#' @param gap_layer1 ALS-derived gap as an [`raster::RasterLayer-class`] object at time 1. (output of  [getForestGaps()] function).
-#' @param gap_layer2 ALS-derived gap as an [`raster::RasterLayer-class`] object at time 2. (output of  [getForestGaps()] function).
-#' @return A [`raster::RasterLayer-class`] object representing forest gap change area
+#' @param gap_layer1 ALS-derived gap as an [`terra::SpatRaster-class`] object at time 1. (output of  [getForestGaps()] function).
+#' @param gap_layer2 ALS-derived gap as an [`terra::SpatRaster-class`] object at time 2. (output of  [getForestGaps()] function).
+#' @return A [`terra::SpatRaster-class`] object representing forest gap change area
 #' @author Carlos Alberto Silva.
 #'
 #' @examples
 #' \dontrun{
 #' # Loading raster and viridis libraries
-#' library(raster)
+#' library(terra)
 #' library(viridis)
 #' 
 #'
