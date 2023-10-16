@@ -4,22 +4,21 @@
 #'
 #' @usage getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 #'
-#' @param chm_layer ALS-derived Canopy Height Model (CHM) ([`raster::RasterLayer-class`]) object. An object of the class [`raster::RasterLayer-class`].
+#' @param chm_layer ALS-derived Canopy Height Model (CHM) ([`terra::SpatRaster-class`]) object. An object of the class [`terra::SpatRaster-class`].
 #' @param threshold Height threshold for gap detection. Default is 10 m.
 #' @param size A vector containing the minimum and maximum gap size - area (m2).
 #' Gaps with area < size\[1\] or area > size\[2\] are not considered. Default is 1 m2 and 1ha.
-#' @return Forest Gaps. An object of the class RasterLayer.
-#' @author Carlos Alberto Silva.
+#' @return Forest Gaps. An object of the class SpatRaster.
+#' @author Carlos Alberto Silva and Lucy Beese.
 #' @examples
 #'
 #' # =======================================================================#
 #' # Importing ALS-derived Canopy Height Model (CHM)
 #' # =======================================================================#
-#' # Loading raster and viridis libraries
-#' library(raster)
+#' # Loading terra and viridis libraries
+#' library(terra)
 #' library(viridis)
 #' 
-#'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 #' data(ALS_CHM_DUC)
 #'
@@ -48,14 +47,14 @@
 #' nthresholds <- c(10, 15, 20, 25)
 #' size <- c(1, 10^4) # m2
 #'
-#' # creating an empy raster stack to store multiple gaps as RasterLayers
-#' gaps_stack <- stack()
+#' # creating an empty vector to store multiple gaps as RasterLayers
+#' gaps_stack <- c()
 #'
 #' # Gap detection
 #' for (i in nthresholds) {
 #'   gaps_i <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = i, size = size)
 #'   names(gaps_i) <- paste0("gaps_", i, "m")
-#'   gaps_stack <- stack(gaps_stack, gaps_i)
+#'   gaps_stack[[length(gaps_stack) + 1]] <- gaps_i
 #' }
 #'
 #' # plot gaps
@@ -78,15 +77,14 @@
 getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
   chm_layer[chm_layer > threshold] <- NA
   chm_layer[chm_layer <= threshold] <- 1
-  gaps <- raster::clump(chm_layer, directions = 8, gap = FALSE)
-  rcl <- raster::freq(gaps)
-  rcl[, 2] <- rcl[, 2] * raster::res(chm_layer)[1]^2
-  rcl <- cbind(rcl[, 1], rcl)
-  z <- raster::reclassify(gaps, rcl = rcl, right = NA)
+  gaps <- terra::patches(chm_layer, directions = 8, allowGaps = FALSE)
+  rcl <- terra::freq(gaps)
+  rcl[, 2] <- rcl[, 2] * terra::res(chm_layer)[1]^2
+  z <- terra::classify(gaps, rcl = rcl, right = FALSE)
   z[is.na(gaps)] <- NA
   gaps[z > size[2]] <- NA
   gaps[z < size[1]] <- NA
-  gaps <- raster::clump(gaps, directions = 8, gap = FALSE)
+  gaps <- terra::patches(gaps, directions = 8, allowGaps = FALSE)
   names(gaps) <- "gaps"
   return(gaps)
 }
