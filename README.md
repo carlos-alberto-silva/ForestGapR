@@ -10,7 +10,7 @@
 ForestGapR: An R Package for Airborne Laser Scanning-derived Tropical Forest Gaps Analysis 
 
 Authors: Carlos Alberto, Ekena Rangel, Midhun Mohan, Danilo Roberti Alves de Almeida, Eben North Broadbent, 
-Wan Shafrina Wan Mohd Jaafar, Adrian Cardil, Ruben Valbuena, Toby Jackson, Carine Klauberg and Caio Hamamura
+Wan Shafrina Wan Mohd Jaafar, Adrian Cardil, Ruben Valbuena, Toby Jackson, Carine Klauberg, Caio Hamamura and Lucy Beese.
 
 The GapForestR package provides functions to i) automate canopy gaps detection, ii) compute a series of forest canopy gap statistics, including gap-size frequency distributions and spatial distribution, iii) map gap dynamics (when multi-temporal ALS data are available), and iv) convert the data among spatial formats.
 
@@ -28,8 +28,8 @@ install.packages("ForestGapR")
 
 ### Forest Canopy Gap Detection
 ```r
-#Loading raster and viridis library
-library(raster)
+#Loading terra and viridis library
+library(terra)
 library(viridis)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
@@ -63,8 +63,8 @@ List of forest gaps statistics:
   #chm_range - Range of canopy height (m) within gap boundary
 
 ```r
-#Loading raster library
-library(raster)
+#Loading terra library
+library(terra)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
@@ -120,8 +120,8 @@ gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
 ### Forest Canopy Gap-size Frequency Distributions
 
 ```r
-#Loading raster library
-library(raster)
+#Loading terra library
+library(terra)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
 data(ALS_CHM_DUC)
@@ -147,8 +147,8 @@ grid(4,4)
 
 ### Forest Canopy Gaps as Spatial Polygons
 ```r
-#Loading raster and viridis libraries
-library(raster)
+#Loading terra and viridis libraries
+library(terra)
 library(viridis)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
@@ -161,7 +161,7 @@ size<-c(4,1000) # m2
 # Detecting forest gaps
 gaps_duc<-getForestGaps(chm_layer=ALS_CHM_DUC, threshold=threshold, size=size)
 
-# Converting raster layer to SpatialPolygonsDataFrame
+# Converting SpatRaster layer to SpatialPolygonsDataFrame
 gaps_spdf<-GapSPDF(gap_layer=gaps_duc)
 
 # Plotting ALS-derived CHM and forest gaps
@@ -186,8 +186,8 @@ head(gaps_spdf@data)
 
 ### Forest Gap Change Detection
 ```r
-#Loading raster and viridis libraries
-library(raster)
+#Loading terra and viridis libraries
+library(terra)
 library(viridis)
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
@@ -220,8 +220,8 @@ plot(Gap_changes, add=TRUE, col="yellow", legend=FALSE)
 
 ### Spatial Pattern of Forest Canopy Gaps
 ```r
-#Loading raster and viridis libraries
-library(raster)
+#Loading terra and viridis libraries
+library(terra)
 library(viridis)
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
