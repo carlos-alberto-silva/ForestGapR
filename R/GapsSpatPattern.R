@@ -8,9 +8,9 @@
 #' @param gap_SPDF_layer A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps.
 #' Output of [GapSPDF()] function.
 #' An object of the class [`sp::SpatialPointsDataFrame-class`]
-#' @param chm_layer ALS-derived Canopy Height Model (CHM) ([`terra::SpatRaster-class`]) object. An object of the class [`raster::RasterLayer-class`].
+#' @param chm_layer ALS-derived Canopy Height Model (CHM) ([`terra::SpatRaster-class`]) object. An object of the class [`terra::SpatRaster-class`].
 #' @return A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
-#' @author Ruben Valbuena and Carlos Alberto Silva.
+#' @author Ruben Valbuena, Carlos Alberto Silva and Lucy Beese.
 #' @references
 #' \code{\link[spatstat.explore]{spatstat.explore-package}}, see 
 #' \code{\link[spatstat.explore]{Lest}},
@@ -36,7 +36,7 @@
 #' gaps_cau2012 <- getForestGaps(chm_layer = ALS_CHM_CAU_2012, threshold = threshold, size = size)
 #' gaps_cau2014 <- getForestGaps(chm_layer = ALS_CHM_CAU_2014, threshold = threshold, size = size)
 #'
-#' # Converting raster layers to SpatialPolygonsDataFrame
+#' # Converting SpatRasters to SpatialPolygonsDataFrame
 #' gaps_cau2012_spdf <- GapSPDF(gap_layer = gaps_cau2012)
 #' gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 #'
