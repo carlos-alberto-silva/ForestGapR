@@ -10,7 +10,7 @@
 #' @return A [`sp::SpatialPointsDataFrame-class`] object of the forest canopy gaps.
 #' The result can be converted to a SpatVector and exported as a ESRI shapefile using
 #' [terra::writeVector()] function in the \emph{terra} package.
-#' @author Carlos Alberto Silva.
+#' @author Carlos Alberto Silva and Lucy Beese.
 #'
 #' @examples
 #' # Loading terra and viridis libraries
