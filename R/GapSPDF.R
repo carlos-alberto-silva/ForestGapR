@@ -13,7 +13,7 @@
 #' @author Carlos Alberto Silva and Lucy Beese.
 #'
 #' @examples
-#' # Loading terra and viridis libraries
+#' # Loading libraries
 #' library(terra)
 #' library(viridis)
 #' library(sf)
@@ -33,7 +33,7 @@
 #' gaps_spdf <- GapSPDF(gap_layer = gaps_duc)
 #'
 #' # Plotting ALS-derived CHM and forest gaps
-#' plot(ALS_CHM_DUC, col = viridis(10), xlim = c(173025, 173125), ylim = c(9673100, 96731200))
+#' plot(ALS_CHM_DUC, col = viridis(10))
 #' plot(gaps_spdf, add = TRUE, border = "red", lwd = 2)
 #'
 #' # Populating the attribute table of Gaps_spdf with gaps statistics
@@ -41,9 +41,9 @@
 #' gaps_spdf <- merge(gaps_spdf, gaps_stats, by = "gap_id")
 #' head(gaps_spdf@data)
 #' # Convert to SpatVector for export 
-#' terra::vect(gaps_spdf)
+#' gaps_vect <- terra::vect(gaps_spdf)
 #' # Save the SpatVector object to the Shapefile
-  terra::writeVector(gaps_spdf, 'output_shapefile.shp', overwrite = TRUE)
+  terra::writeVector(gaps_vect, 'output_shapefile.shp', overwrite = TRUE)
 
 GapSPDF <- function(gap_layer){
   gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
