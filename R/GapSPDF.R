@@ -1,4 +1,4 @@
-t#' Forest Canopy Gaps as Spatial Polygons
+#' Forest Canopy Gaps as Spatial Polygons
 #'
 #' @description This function converts forest canopy gaps as [`terra::SpatRaster-class`] to
 #' [`sp::SpatialPointsDataFrame-class`] objects
