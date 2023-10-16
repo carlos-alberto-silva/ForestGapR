@@ -8,7 +8,7 @@
 #' @param gap_layer ALS-derived gap as [`terra::SpatRaster-class`] object (output of  [getForestGaps()] function). An object of the class SpatRaster.
 #' @param chm_layer ALS-derived Canopy Height Model (CHM) [`terra::SpatRaster-class`] used in [getForestGaps()] function. An object of the class [`terra::SpatRaster-class`].
 #' @return A data.frame containing forest canopy gap statistics
-#' @author Carlos Alberto Silva.
+#' @author Carlos Alberto Silva and Lucy Beese.
 #' @details
 #' # List of forest gaps statistics:
 #' \itemize{
@@ -36,7 +36,7 @@
 #' # Detecting forest gaps
 #' gaps_duc <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = threshold, size = size)
 #'
-#' # Computing basic statistis of forest gap
+#' # Computing basic statistics of forest gap
 #' gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
 #' @export
 GapStats <- function(gap_layer, chm_layer) {
