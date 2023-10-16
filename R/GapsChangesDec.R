@@ -7,7 +7,7 @@
 #' @param gap_layer1 ALS-derived gap as an [`terra::SpatRaster-class`] object at time 1. (output of  [getForestGaps()] function).
 #' @param gap_layer2 ALS-derived gap as an [`terra::SpatRaster-class`] object at time 2. (output of  [getForestGaps()] function).
 #' @return A [`terra::SpatRaster-class`] object representing forest gap change area
-#' @author Carlos Alberto Silva.
+#' @author Carlos Alberto Silva and Lucy Beese.
 #'
 #' @examples
 #' \dontrun{
