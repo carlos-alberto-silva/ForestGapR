@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' # Loading raster and viridis libraries
+#' # Loading terra and viridis libraries
 #' library(terra)
 #' library(viridis)
 #' 
