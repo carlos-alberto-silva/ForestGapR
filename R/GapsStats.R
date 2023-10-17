@@ -64,9 +64,10 @@ GapStats <- function(gap_layer, chm_layer) {
   }
   
   gap_list <- data.frame(terra::freq(gap_layer))
+  gap_list$layer<-NULL
   gap_list$count <-gap_list$count * terra::res(gap_layer)[1]^2
   gap_list <- gap_list[!is.na(gap_list[, 1]), ]
-  gap_list$layer<-NULL
+  
   chm_max <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = max)
   chm_min <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = min)
   chm_mean <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = mean), 2)
