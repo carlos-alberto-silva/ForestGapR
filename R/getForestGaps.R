@@ -79,6 +79,7 @@ getForestGaps <- function(chm_layer, threshold = 10, size = c(1, 10^4)) {
   chm_layer[chm_layer <= threshold] <- 1
   gaps <- terra::patches(chm_layer, directions = 8, allowGaps = FALSE)
   rcl <- terra::freq(gaps)
+  rcl$layer<-NULL
   rcl[, 2] <- rcl[, 2] * terra::res(chm_layer)[1]^2
   z <- terra::classify(gaps, rcl = rcl, right = FALSE)
   z[is.na(gaps)] <- NA
