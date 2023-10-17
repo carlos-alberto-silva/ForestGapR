@@ -44,8 +44,7 @@
 #' gaps_vect <- terra::vect(gaps_spdf)
 #' # Save the SpatVector object to the Shapefile
 #' terra::writeVector(gaps_vect, 'output_shapefile.shp', overwrite = TRUE)
-
-  GapSPDF <- function(gap_layer){
+GapSPDF <- function(gap_layer){
     gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
     names(gaps_poly) <- "gap_id"
     gaps_sf <- sf::st_as_sf(gaps_poly)
