@@ -29,7 +29,7 @@
 #' # Detecting forest gaps
 #' gaps_duc <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = threshold, size = size)
 #'
-#' # Converting raster layer to SpatialPolygonsDataFrame
+#' # Converting SpatRaster layer to SpatialPolygonsDataFrame
 #' gaps_spdf <- GapSPDF(gap_layer = gaps_duc)
 #'
 #' # Plotting ALS-derived CHM and forest gaps
@@ -43,14 +43,14 @@
 #' # Convert to SpatVector for export 
 #' gaps_vect <- terra::vect(gaps_spdf)
 #' # Save the SpatVector object to the Shapefile
-  terra::writeVector(gaps_vect, 'output_shapefile.shp', overwrite = TRUE)
+#' terra::writeVector(gaps_vect, 'output_shapefile.shp', overwrite = TRUE)
 
-GapSPDF <- function(gap_layer){
-  gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
-  names(gaps_poly) <- "gap_id"
-  gaps_sf <- sf::st_as_sf(gaps_poly)
-  gaps_df <- terra::as.data.frame(terra::centroids(gaps_poly), geom="XY")
-  sf_polys<- sf::as_Spatial(gaps_sf)
-  gaps_spdf<- sp::SpatialPolygonsDataFrame(sf_polys, gaps_df)
-  return(gaps_spdf)
-}
+  GapSPDF <- function(gap_layer){
+    gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
+    names(gaps_poly) <- "gap_id"
+    gaps_sf <- sf::st_as_sf(gaps_poly)
+    gaps_df <- terra::as.data.frame(terra::centroids(gaps_poly), geom="XY")
+    sf_polys<- sf::as_Spatial(gaps_sf)
+    gaps_spdf<- sp::SpatialPolygonsDataFrame(sf_polys, gaps_df)
+    return(gaps_spdf)
+  }
