@@ -16,6 +16,7 @@ Authors@R: c(
     person("Jeff", "Atkins", , "jeffrey.atkins@usda.gov", role = "aut"),
     person("Caio", "Hamamura", , "caiohamamura@gmail.com", role = "aut", comment = "Maintenance and review"),
     person("Carine", "Klauberg", , "carine_klauberg@hotmail.com", role = "aut", comment = "Reviews the documentation")
+    person("Lucy", "Beese", "lb16936@bristol.ac.uk", role="aut", comment = "Reviews the documentation")
   )
 Description: Set of tools for detecting and analyzing Airborne Laser Scanning-derived Tropical Forest Canopy Gaps. Details were published in Silva and others (2019) <doi:10.1111/2041-210X.13211>.
 License: GPL-3
@@ -25,7 +26,8 @@ Imports:
     graphics,
     igraph,
     poweRlaw,
-    raster,
+    terra,
+    sf,
     sp,
     spatstat.explore,
     spatstat.geom,
