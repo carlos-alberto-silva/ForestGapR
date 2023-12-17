@@ -1,7 +1,7 @@
 Type: Package
 Package: ForestGapR
 Title: Tropical Forest Canopy Gaps Analysis
-Version: 0.1.7
+Version: 0.1.8
 Authors@R: c(
     person("Carlos Alberto", "Silva", , "carlos_engflorestal@outlook.com", role = c("aut", "cph", "cre")),
     person("Ekena Rangel", "Pinagé", , "ekenapinage@hotmail.com", role = "aut", comment = "Reviews the documentation"),
