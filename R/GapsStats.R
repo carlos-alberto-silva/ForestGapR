@@ -71,7 +71,7 @@ GapStats <- function(gap_layer, chm_layer) {
   chm_max <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = max)
   chm_min <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = min)
   chm_mean <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = mean), 2)
-  chm_sd <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = sd), 2)
+  chm_sd <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = stats::sd), 2)
   chm_gini <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), GiniCoeff), 2)
   chm_range <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), Range_Func), 2)
   
