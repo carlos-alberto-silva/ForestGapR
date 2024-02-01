@@ -27,7 +27,7 @@
 #' library(terra)
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#' data(ALS_CHM_CAU_2012)
+#' ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 #'
 #' # set height thresholds (e.g. 10 meters)
 #' threshold <- 10
