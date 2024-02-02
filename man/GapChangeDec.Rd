@@ -7,26 +7,26 @@
 GapChangeDec(gap_layer1,gap_layer2)
 }
 \arguments{
-\item{gap_layer1}{ALS-derived gap as an \code{\link[raster:Raster-classes]{raster::RasterLayer}} object at time 1. (output of  \code{\link[=getForestGaps]{getForestGaps()}} function).}
+\item{gap_layer1}{ALS-derived gap as an \code{\link[terra:SpatRaster-class]{terra::SpatRaster}} object at time 1. (output of  \code{\link[=getForestGaps]{getForestGaps()}} function).}
 
-\item{gap_layer2}{ALS-derived gap as an \code{\link[raster:Raster-classes]{raster::RasterLayer}} object at time 2. (output of  \code{\link[=getForestGaps]{getForestGaps()}} function).}
+\item{gap_layer2}{ALS-derived gap as an \code{\link[terra:SpatRaster-class]{terra::SpatRaster}} object at time 2. (output of  \code{\link[=getForestGaps]{getForestGaps()}} function).}
 }
 \value{
-A \code{\link[raster:Raster-classes]{raster::RasterLayer}} object representing forest gap change area
+A \code{\link[terra:SpatRaster-class]{terra::SpatRaster}} object representing forest gap change area
 }
 \description{
-This function detects forest canopy gap changes across two forest gap \code{\link[raster:Raster-classes]{raster::RasterLayer}} objects
+This function detects forest canopy gap changes across two forest gap \code{\link[terra:SpatRaster-class]{terra::SpatRaster}} objects
 }
 \examples{
 \dontrun{
-# Loading raster and viridis libraries
-library(raster)
+# Loading terra and viridis libraries
+library(terra)
 library(viridis)
 
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
-data(ALS_CHM_CAU_2012)
-data(ALS_CHM_CAU_2014)
+ALS_CHM_CAU_2012 <- rast(system.file("tif/ALS_CHM_CAU_2012.tif", package = "ForestGapR"))
+ALS_CHM_CAU_2014 <- rast(system.file("tif/ALS_CHM_CAU_2014.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold <- 10
@@ -53,5 +53,5 @@ par(oldpar)
 }
 }
 \author{
-Carlos Alberto Silva.
+Carlos Alberto Silva and Lucy Beese.
 }

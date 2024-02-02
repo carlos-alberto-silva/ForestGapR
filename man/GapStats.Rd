@@ -7,9 +7,9 @@
 GapStats(gap_layer, chm_layer)
 }
 \arguments{
-\item{gap_layer}{ALS-derived gap as \code{\link[raster:Raster-classes]{raster::RasterLayer}} object (output of  \code{\link[=getForestGaps]{getForestGaps()}} function). An object of the class RasterLayer.}
+\item{gap_layer}{ALS-derived gap as \code{\link[terra:SpatRaster-class]{terra::SpatRaster}} object (output of  \code{\link[=getForestGaps]{getForestGaps()}} function). An object of the class SpatRaster.}
 
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) \code{\link[raster:Raster-classes]{raster::RasterLayer}} used in \code{\link[=getForestGaps]{getForestGaps()}} function. An object of the class \code{\link[raster:Raster-classes]{raster::RasterLayer}}.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) \code{\link[terra:SpatRaster-class]{terra::SpatRaster}} used in \code{\link[=getForestGaps]{getForestGaps()}} function. An object of the class \code{\link[terra:SpatRaster-class]{terra::SpatRaster}}.}
 }
 \value{
 A data.frame containing forest canopy gap statistics
@@ -31,11 +31,11 @@ This function computes a series of forest canopy gap statistics
 }
 
 \examples{
-# Loading raster library
-library(raster)
+# Loading terra library
+library(terra)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_CAU_2012)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold <- 10
@@ -44,9 +44,9 @@ size <- c(5, 10^4) # m2
 # Detecting forest gaps
 gaps_duc <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = threshold, size = size)
 
-# Computing basic statistis of forest gap
+# Computing basic statistics of forest gap
 gaps_stats <- GapStats(gap_layer = gaps_duc, chm_layer = ALS_CHM_DUC)
 }
 \author{
-Carlos Alberto Silva.
+Carlos Alberto Silva and Lucy Beese.
 }
