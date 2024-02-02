@@ -33,7 +33,7 @@ library(terra)
 library(viridis)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # Plotting chm
 plot(ALS_CHM_DUC, col=viridis(10))
@@ -67,7 +67,7 @@ List of forest gaps statistics:
 library(terra)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # Setting height thresholds (e.g. 10 meters)
 threshold<-10
@@ -124,7 +124,7 @@ gaps_stats<-GapStats(gap_layer=gaps_duc, chm_layer=ALS_CHM_DUC)
 library(terra)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold<-10
@@ -152,7 +152,7 @@ library(terra)
 library(viridis)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold<-10
@@ -191,8 +191,8 @@ library(terra)
 library(viridis)
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
-data(ALS_CHM_CAU_2012)
-data(ALS_CHM_CAU_2014)
+ALS_CHM_CAU_2012 <- rast(system.file("tif/ALS_CHM_CAU_2012.tif", package = "ForestGapR"))
+ALS_CHM_CAU_2014 <- rast(system.file("tif/ALS_CHM_CAU_2014.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold<-10
@@ -225,8 +225,8 @@ library(terra)
 library(viridis)
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
-data(ALS_CHM_CAU_2012)
-data(ALS_CHM_CAU_2014)
+ALS_CHM_CAU_2012 <- rast(system.file("tif/ALS_CHM_CAU_2012.tif", package = "ForestGapR"))
+ALS_CHM_CAU_2014 <- rast(system.file("tif/ALS_CHM_CAU_2014.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold <- 10
