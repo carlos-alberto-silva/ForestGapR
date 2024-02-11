@@ -139,12 +139,10 @@ GapSizeFDist(
   gaps_stats = gaps_stats, method = "Hanel_2017",
   col = "forestgreen", pch = 16, cex = 1.25, ann = FALSE, axes = FALSE
 )
-#> Warning in xy.coords(x, y, xlabel, ylabel, log): 41 y values <= 0 omitted from
-#> logarithmic plot
 title(
   "Forest Canopy Gap-size Frequency Distributions",
-  ylab = "Gap Frequency",
-  xlab = as.expression(bquote("Gap Size" ~ (m^2)))
+  xlab = as.expression(bquote("Gap Size" ~ (m^2))),
+  ylab = "Gap Frequency"
 )
 at <- c(1:5, (1:5) * 10)
 sapply(1:2, axis, at = at, las = 2)
