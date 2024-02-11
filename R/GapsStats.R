@@ -27,7 +27,7 @@
 #' library(terra)
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#' data(ALS_CHM_CAU_2012)
+#' ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 #'
 #' # set height thresholds (e.g. 10 meters)
 #' threshold <- 10
@@ -71,7 +71,7 @@ GapStats <- function(gap_layer, chm_layer) {
   chm_max <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = max)
   chm_min <- stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = min)
   chm_mean <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = mean), 2)
-  chm_sd <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = sd), 2)
+  chm_sd <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), FUN = stats::sd), 2)
   chm_gini <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), GiniCoeff), 2)
   chm_range <- round(stats::aggregate(chm_layer[], by = list(gap_layer[]), Range_Func), 2)
   

@@ -7,7 +7,7 @@
 getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 }
 \arguments{
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) (\code{\link[raster:Raster-classes]{raster::RasterLayer}}) object. An object of the class \code{\link[raster:Raster-classes]{raster::RasterLayer}}.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) (\code{\link[terra:SpatRaster-class]{terra::SpatRaster}}) object. An object of the class \code{\link[terra:SpatRaster-class]{terra::SpatRaster}}.}
 
 \item{threshold}{Height threshold for gap detection. Default is 10 m.}
 
@@ -15,7 +15,7 @@ getForestGaps(chm_layer, threshold=10, size=c(1,10^4))
 Gaps with area < size[1] or area > size[2] are not considered. Default is 1 m2 and 1ha.}
 }
 \value{
-Forest Gaps. An object of the class RasterLayer.
+Forest Gaps. An object of the class SpatRaster.
 }
 \description{
 This function detects forest canopy gaps on Airborne Laser Scanning(ALS)-derived Canopy Height Model (CHM).
@@ -25,13 +25,12 @@ This function detects forest canopy gaps on Airborne Laser Scanning(ALS)-derived
 # =======================================================================#
 # Importing ALS-derived Canopy Height Model (CHM)
 # =======================================================================#
-# Loading raster and viridis libraries
-library(raster)
+# Loading terra and viridis libraries
+library(terra)
 library(viridis)
 
-
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # Plotting chm
 plot(ALS_CHM_DUC, col = viridis(10), main = "ALS CHM")
@@ -58,32 +57,32 @@ plot(gaps_duc, col = "red", add = TRUE, main = "Forest Canopy Gap", legend = FAL
 nthresholds <- c(10, 15, 20, 25)
 size <- c(1, 10^4) # m2
 
-# creating an empy raster stack to store multiple gaps as RasterLayers
-gaps_stack <- stack()
+# creating an empty vector to store multiple gaps as RasterLayers
+gaps_stack <- c()
 
 # Gap detection
 for (i in nthresholds) {
   gaps_i <- getForestGaps(chm_layer = ALS_CHM_DUC, threshold = i, size = size)
   names(gaps_i) <- paste0("gaps_", i, "m")
-  gaps_stack <- stack(gaps_stack, gaps_i)
+  gaps_stack[[length(gaps_stack) + 1]] <- gaps_i
 }
 
 # plot gaps
 oldpar <- par(no.readonly = TRUE)
 par(mfrow = c(2, 2))
 plot(ALS_CHM_DUC, col = viridis(10), main = "Height threshold 10m")
-plot(gaps_stack$gaps_10m, col = "red", add = TRUE, legend = FALSE)
+plot(gaps_stack[[1]], col = "red", add = TRUE, legend = FALSE)
 
 plot(ALS_CHM_DUC, col = viridis(10), main = "Height threshold 15m")
-plot(gaps_stack$gaps_15m, col = "red", add = TRUE, legend = FALSE)
+plot(gaps_stack[[2]], col = "red", add = TRUE, legend = FALSE)
 
 plot(ALS_CHM_DUC, col = viridis(10), main = "Height threshold 20m")
-plot(gaps_stack$gaps_20m, col = "red", add = TRUE, legend = FALSE)
+plot(gaps_stack[[3]], col = "red", add = TRUE, legend = FALSE)
 
 plot(ALS_CHM_DUC, col = viridis(10), main = "Height threshold 25m")
-plot(gaps_stack$gaps_25m, col = "red", add = TRUE, legend = FALSE)
+plot(gaps_stack[[4]], col = "red", add = TRUE, legend = FALSE)
 par(oldpar)
 }
 \author{
-Carlos Alberto Silva.
+Carlos Alberto Silva and Lucy Beese.
 }

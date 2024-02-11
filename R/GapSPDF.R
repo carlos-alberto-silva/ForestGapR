@@ -20,7 +20,7 @@
 #' library(sp)
 #'
 #' # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-#' data(ALS_CHM_DUC)
+#' ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 #'
 #' # set height thresholds (e.g. 10 meters)
 #' threshold <- 10
@@ -43,7 +43,10 @@
 #' # Convert to SpatVector for export 
 #' gaps_vect <- terra::vect(gaps_spdf)
 #' # Save the SpatVector object to the Shapefile
+#' \dontrun{
 #' terra::writeVector(gaps_vect, 'output_shapefile.shp', overwrite = TRUE)
+#' }
+#' @export
 GapSPDF <- function(gap_layer){
     gaps_poly <- terra::as.polygons(gap_layer, dissolve=TRUE, na.rm=TRUE, values=TRUE)
     names(gaps_poly) <- "gap_id"

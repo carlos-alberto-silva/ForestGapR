@@ -22,11 +22,11 @@ The \ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}} param
 This function quantifies forest canopy gap size-frequency distributions and estimates power-law exponent (\ifelse{latex}{\out{$\lambda$}}{\ifelse{html}{\out{&lambda;}}{lambda}}) from the Zeta distribution.
 }
 \examples{
-# Loading raster library
-library(raster)
+# Loading terra library
+library(terra)
 
 # ALS-derived CHM over Adolpho Ducke Forest Reserve - Brazilian tropical forest
-data(ALS_CHM_DUC)
+ALS_CHM_DUC <- rast(system.file("tif/ALS_CHM_DUC.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold <- 10

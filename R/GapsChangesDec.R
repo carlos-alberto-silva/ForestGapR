@@ -17,8 +17,8 @@
 #' 
 #'
 #' # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
-#' data(ALS_CHM_CAU_2012)
-#' data(ALS_CHM_CAU_2014)
+#' ALS_CHM_CAU_2012 <- rast(system.file("tif/ALS_CHM_CAU_2012.tif", package = "ForestGapR"))
+#' ALS_CHM_CAU_2014 <- rast(system.file("tif/ALS_CHM_CAU_2014.tif", package = "ForestGapR"))
 #'
 #' # set height thresholds (e.g. 10 meters)
 #' threshold <- 10
