@@ -11,25 +11,25 @@ GapsSpatPattern(gap_SPDF_layer, chm_layer)
 Output of \code{\link[=GapSPDF]{GapSPDF()}} function.
 An object of the class \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}}}
 
-\item{chm_layer}{ALS-derived Canopy Height Model (CHM) (\code{\link[raster:Raster-classes]{raster::RasterLayer}}) object. An object of the class \code{\link[raster:Raster-classes]{raster::RasterLayer}}.}
+\item{chm_layer}{ALS-derived Canopy Height Model (CHM) (\code{\link[terra:SpatRaster-class]{terra::SpatRaster}}) object. An object of the class \code{\link[terra:SpatRaster-class]{terra::SpatRaster}}.}
 }
 \value{
 A plot with Ripley's K- and L-functions. Value of Clark-Evans index (R) and test for randomness (R=1), aggregation (R<1) or uniform distribution (R>1).
 }
 \description{
-This function computes second order statistics of forest canopy gaps (\code{\link[raster:Raster-classes]{raster::RasterLayer}}) to
+This function computes second order statistics of forest canopy gaps (\code{\link[terra:SpatRaster-class]{terra::SpatRaster}}) to
 \code{\link[sp:SpatialPointsDataFrame-class]{sp::SpatialPointsDataFrame}} objects
 }
 \examples{
 # This takes > 5 seconds!
 \donttest{
-# Loading raster and viridis libraries
-library(raster)
+# Loading terra and viridis libraries
+library(terra)
 library(viridis)
 
 # ALS-derived CHM from Fazenda Cauxi - Brazilian tropical forest
-data(ALS_CHM_CAU_2012)
-data(ALS_CHM_CAU_2014)
+ALS_CHM_CAU_2012 <- rast(system.file("tif/ALS_CHM_CAU_2012.tif", package = "ForestGapR"))
+ALS_CHM_CAU_2014 <- rast(system.file("tif/ALS_CHM_CAU_2014.tif", package = "ForestGapR"))
 
 # set height thresholds (e.g. 10 meters)
 threshold <- 10
@@ -39,7 +39,7 @@ size <- c(1, 1000) # m2
 gaps_cau2012 <- getForestGaps(chm_layer = ALS_CHM_CAU_2012, threshold = threshold, size = size)
 gaps_cau2014 <- getForestGaps(chm_layer = ALS_CHM_CAU_2014, threshold = threshold, size = size)
 
-# Converting raster layers to SpatialPolygonsDataFrame
+# Converting SpatRasters to SpatialPolygonsDataFrame
 gaps_cau2012_spdf <- GapSPDF(gap_layer = gaps_cau2012)
 gaps_cau2014_spdf <- GapSPDF(gap_layer = gaps_cau2014)
 
@@ -55,5 +55,5 @@ gaps_cau2014_SpatPattern <- GapsSpatPattern(gaps_cau2014_spdf, ALS_CHM_CAU_2014)
 \code{\link[spatstat.explore]{clarkevans.test}}
 }
 \author{
-Ruben Valbuena and Carlos Alberto Silva.
+Ruben Valbuena, Carlos Alberto Silva and Lucy Beese.
 }
